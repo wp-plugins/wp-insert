@@ -7,7 +7,7 @@ Version: 1.1
 Author: Namith Jawahar
 Author URI: http://www.smartlogix.co.in/
 
-Insert your ad code anywhere around your content.
+WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin
 */
 
 add_action('admin_menu', 'smart_add_menu');
