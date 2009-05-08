@@ -2,7 +2,7 @@
 <table class="form-table">
 <tr>
 <td align="left">
-<a href="http://www.smartlogix.co.in/"><img src="<?php echo get_bloginfo('url') ?>/wp-content/plugins/wp-insert/images/Smart-Logix-we-customize.jpg" /></a>
+<a href="http://www.smartlogix.co.in/"><img src="http://smartlogix.co.in/ads/smartlogixad1.jpg" /></a>
 </td>
 <td align="right">
 <b>Think we have done a great job?</b><br/><a href="http://wordpress.org/extend/plugins/wp-insert/">Rate the plugin</a> or <a href="http://www.smartlogix.co.in/">Leave Us a Comment</a>
