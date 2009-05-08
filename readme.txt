@@ -9,37 +9,39 @@ Stable tag: 1.1
 WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin
 
 == Description ==
-WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin
-
-Features
-
-Manage Ads
-	In post ads – Allows you to insert your ads around your content
-	* Insert Ads above the content 
-	* Insert Ads below the content 
-	* Insert Ads to the left of the post 
-	* Insert ads to the right of the post 
-	* Option to show ads only on single posts and pages 
-	Five ad widgets at your disposal
-	* Go to the widgets page under “Appearance” and place the widgets onto the sidebars you want the ads to appear onto
- 
- 
-Manage Feeds
-	* Your logo in your feeds  
-	* Insert Ads into feeds  
-	* Link your feeds to feedburner
-	* Subscribe via Email widget 
-	* Subscribe to feed widget
- 
-Manage Tracking Codes
-	* Insert Google Analytics tracking onto all you blog pages instantly  
-	* Paste other tracking code into the header or footer of your blog  
-
-Manage WYSIWYG editing
-	* Replace TINY MCE with FCK EDITOR    
-	* Disable auto formatting done by wordpress (Stops the annoying autoformatting done by wordpress. You can now write your posts as you intented to write it. Also allowa you to paste in javascript etc easily into your posts/pages)
-	* WYSIWYG Category description Editor  
-	* WYSIWYG Excerpt Editor 
+<b>WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin</b><br/>
+<br/>
+Features<br/>
+<br/>
+Manage Ads<br/>
+	In post ads – Allows you to insert your ads around your content<br/>
+	* Insert Ads above the content <br/>
+	* Insert Ads below the content <br/>
+	* Insert Ads to the left of the post <br/>
+	* Insert ads to the right of the post <br/>
+	* Option to show ads only on single posts and pages <br/>
+	Five ad widgets at your disposal <br/>
+	* Go to the widgets page under “Appearance” and place the widgets onto the sidebars you want the ads to appear onto <br/>
+ <br/>
+ <br/>
+Manage Feeds<br/>
+	* Your logo in your feeds <br/>
+	* Insert Ads into feeds <br/>
+	* Link your feeds to feedburner <br/>
+	* Subscribe via Email widget <br/>
+	* Subscribe to feed widget<br/>
+ <br/>
+ <br/>
+Manage Tracking Codes<br/>
+	* Insert Google Analytics tracking onto all you blog pages instantly <br/>
+	* Paste other tracking code into the header or footer of your blog <br/>
+ <br/>
+ <br/>
+Manage WYSIWYG editing<br/>
+	* Replace TINY MCE with FCK EDITOR <br/>   
+	* Disable auto formatting done by wordpress (Stops the annoying autoformatting done by wordpress. You can now write your posts as you intented to write it. Also allowa you to paste in javascript etc easily into your posts/pages)<br/>
+	* WYSIWYG Category description Editor <br/>
+	* WYSIWYG Excerpt Editor <br/>
 
 == Installation ==
 
