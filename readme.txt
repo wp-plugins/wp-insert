@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: Namith Jawahar
 Donate link: http://smartlogix.co.in/
-Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking
+Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 1.1
+Stable tag: 1.2
 
 WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin
 
@@ -14,14 +14,14 @@ WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin
 Features<br/>
 <br/>
 Manage Ads<br/>
-	In post ads – Allows you to insert your ads around your content<br/>
+	In post ads - Allows you to insert your ads around your content<br/>
 	* Insert Ads above the content <br/>
 	* Insert Ads below the content <br/>
 	* Insert Ads to the left of the post <br/>
 	* Insert ads to the right of the post <br/>
 	* Option to show ads only on single posts and pages <br/>
 	Five ad widgets at your disposal <br/>
-	* Go to the widgets page under “Appearance” and place the widgets onto the sidebars you want the ads to appear onto <br/>
+	* Go to the widgets page under "Appearance" and place the widgets onto the sidebars you want the ads to appear onto <br/>
  <br/>
  <br/>
 Manage Feeds<br/>
@@ -42,6 +42,12 @@ Manage WYSIWYG editing<br/>
 	* Disable auto formatting done by wordpress (Stops the annoying autoformatting done by wordpress. You can now write your posts as you intented to write it. Also allowa you to paste in javascript etc easily into your posts/pages)<br/>
 	* WYSIWYG Category description Editor <br/>
 	* WYSIWYG Excerpt Editor <br/>
+<br/>
+<br/>
+Syntax Highlighting<br/>
+	* Syntax HighLighting for theme editor <br/>
+	* Syntax Highlighting fr plugin editor<br/>
+	* Different highlighting for different file types <br/>
 
 == Installation ==
 
