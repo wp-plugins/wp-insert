@@ -48,7 +48,7 @@ Syntax Highlighting<br/>
 	* Syntax HighLighting for theme editor <br/>
 	* Syntax Highlighting fr plugin editor<br/>
 	* Different highlighting for different file types <br/>
-
+<br/>
 == Installation ==
 
 This section describes how to install the plugin and get it working.
