@@ -56,6 +56,10 @@ function smart_add_syntaxhighlighting_pages() { ?>
 <?php wp_nonce_field('update-options'); ?>
 <table class="form-table">
 <tr valign="top">
+<th scope="row"></th>
+<td><b style="color:red;">This section is irrelavent from wordpress 2.8</b></td>
+</tr>
+<tr valign="top">
 <th scope="row"><input id="smart_enable_sh" name="smart_enable_sh" type="checkbox" value="1"<?php if(get_option('smart_enable_sh')) echo ' checked="checked"'; ?>/> <b>Plugin/Theme Editor</b></th>
 <td>( Syntax highlighting in plugin and theme editor )<br/>
 Syntax highlighting by codepress</td>
