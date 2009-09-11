@@ -53,7 +53,43 @@ wp_nonce_field('update-options');
 wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
 ?>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.core.js"></script>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.draggable.js"></script>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery.corner.js"></script>
+<?php require_once (dirname(__FILE__) . '/postpicker.php'); ?>
+
 <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/common.js"></script>
+<style type="text/css">
+.GreyOutLayer
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	bottom: 0px;
+	background-color: #666;
+	z-index: 100;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 30);
+	opacity: 0.30;
+}
+
+#popUpMaster{position:relative;padding:10px 0 0 10px;display:none}
+#popUpTopLft{position:absolute;left:0px;top:0}
+#popUpTop{position:absolute;left:10px;top:0;height:36px;z-index:9}
+#popUpTopRgt{position:absolute;right:0px;top:0;z-index:9}
+#popUpLft{position:absolute;left:0px;top:30px;width:17px;}
+#popUpRgt{position:absolute;right:0px;top:36px;width:26px;}
+#popUpBtmLft{position:absolute;left:0px;bottom:0px;}
+#popUpBtm{position:absolute;left:17px;bottom:0px;height:20px}
+#popUpBtmRgt{position:absolute;right:0px;bottom:0px;}
+#content{background:#F2F2F2;height:520px;width:725px;margin:0px;z-index:100;position:absolute;top:26px;right:15px;}
+.closePopUp{display:block;position:absolute;right:10px;top:4px;width:20px;height:18px;z-index:10;text-decoration:none;background:none}
+#popUpMaster h4{position:absolute;top:0;left:0;z-index:10;padding:0;margin:6px 0 0 10px;color:#333333;text-shadow:0 1px 0 #FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:15px;cursor:move;background:nonImage.gif;
+	width:100%}
+</style>
+
 			<div id="poststuff" class="metabox-holder has-right-sidebar">
 				<div id="side-info-column" class="inner-sidebar">
 				<?php do_meta_boxes('adWidgets','advanced',null); ?>
@@ -104,8 +140,10 @@ function wp_insert_in_post_ad_HTML($in_post_adID) { ?>
 <textarea id="wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_content" class="widefat" name="wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_content" cols="20" rows="16"><?php echo get_option('wp_insert_in_post_ad_'.$in_post_adID.'_content'); ?></textarea>
 </p>
 <p>
-<label for="wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_exclude_ids">Exclude On Posts/Pages:</label>
-<input id="wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_exclude_ids" class="widefat" type="text" value="<?php echo get_option('wp_insert_in_post_ad_'.$in_post_adID.'_exclude_ids'); ?>" name="wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_exclude_ids"/>
+<label for="wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_exclude_ids">Exclude On Posts/Pages:</label><div class="clear"></div>
+<input style="float:left; width:60%; margin: 0 6px;" class="widefat" type="text" value="<?php echo get_option('wp_insert_in_post_ad_'.$in_post_adID.'_exclude_ids'); ?>" name="wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_exclude_ids" id="wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_exclude_ids" />
+<img style="float:left; margin-top:4px; cursor: pointer;" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/images/search-16x16.png" width="16px" height="16px" onclick="ShowPostPicker('wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_exclude_ids')" />
+<div class="clear"></div>
 </p>
 <p>
 <label for="wp_insert_in_post_ad_<?php echo $in_post_adID; ?>_exclude_home">Exclude On Home Page:</label>
@@ -147,8 +185,10 @@ function ad_widget_HTML($widgetID) { ?>
 <textarea id="wp_insert_ad_widget_<?php echo $widgetID; ?>_content" class="widefat" name="wp_insert_ad_widget_<?php echo $widgetID; ?>_content" cols="20" rows="16"><?php echo get_option('wp_insert_ad_widget_'.$widgetID.'_content'); ?></textarea>
 </p>
 <p>
-<label for="wp_insert_ad_widget_<?php echo $widgetID; ?>_exclude_ids">Exclude On Posts/Pages:</label>
-<input id="wp_insert_ad_widget_<?php echo $widgetID; ?>_exclude_ids" class="widefat" type="text" value="<?php echo get_option('wp_insert_ad_widget_'.$widgetID.'_exclude_ids'); ?>" name="wp_insert_ad_widget_<?php echo $widgetID; ?>_exclude_ids"/>
+<label for="wp_insert_ad_widget_<?php echo $widgetID; ?>_exclude_ids">Exclude On Posts/Pages:</label><div class="clear"></div>
+<input style="float:left; width:60%; margin: 0 6px;" class="widefat" type="text" value="<?php echo get_option('wp_insert_ad_widget_'.$widgetID.'_exclude_ids'); ?>" name="wp_insert_ad_widget_<?php echo $widgetID; ?>_exclude_ids" id="wp_insert_ad_widget_<?php echo $widgetID; ?>_exclude_ids" />
+<img style="float:left; margin-top:4px; cursor: pointer;" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/images/search-16x16.png" width="16px" height="16px" onclick="ShowPostPicker('wp_insert_ad_widget_<?php echo $widgetID; ?>_exclude_ids')" />
+<div class="clear"></div>
 </p>
 <p>
 <label for="wp_insert_ad_widget_<?php echo $widgetID; ?>_exclude_home">Exclude On Home Page:</label>
