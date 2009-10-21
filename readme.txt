@@ -3,8 +3,8 @@ Contributors: Namith Jawahar
 Donate link: http://smartlogix.co.in/
 Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration
 Requires at least: 2.7
-Tested up to: 2.8.4
-Stable tag: 1.3.1
+Tested up to: 2.8.5
+Stable tag: 1.3.2
 
 WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin
 
@@ -28,6 +28,7 @@ Manage Ads (Completely Rewritten with a New and Powerful Interface)<br/>
 	* Option to control each and every ad<br/>
 	Ten ad widgets at your disposal <br/>
 	* Go to the widgets page under "Appearance" and place the widgets onto the sidebars you want the ads to appear onto <br/>
+	* Option to style the Ads <br/>
  <br/>
  <br/>
 Manage Feeds<br/>
