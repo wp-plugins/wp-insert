@@ -3,7 +3,7 @@
 Plugin Name: wp-insert
 Plugin URI: http://www.smartlogix.co.in/
 Description: The ultimate wordpress plugin
-Version: 1.3.2
+Version: 1.3.3
 Author: Namith Jawahar
 Author URI: http://www.smartlogix.co.in/
 WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin
