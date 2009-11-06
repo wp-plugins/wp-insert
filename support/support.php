@@ -1,7 +1,7 @@
 <?php function show_support_options() { ?>
 <table class="form-table">
 <tr valign="bottom">
-<th scope="row"><small><span style="color:#FF0000;"><b>Donate a Dollar</b></span><br/><span style="color:#008E04;">Support our FREE Plugins</span><br/>
+<th scope="row"><small><span style="color:#FF0000;"><b>Donate a few Dollars</b></span><br/><span style="color:#008E04;">Support our FREE Plugins</span><br/>
 You Might Also Like <a target="_blank" href="http://wordpress.org/extend/plugins/wp-private/">WP-PRIVATE</a></small></th>
 <td width="100px">
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
