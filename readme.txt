@@ -82,13 +82,13 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 == Screenshots ==
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
+1. Wp-Insert in action.
+2. Wp-Insert in action.
+3. Wp-Insert in action.
+4. Wp-Insert in action.
+5. Wp-Insert in action.
+6. Wp-Insert in action.
+7. Wp-Insert in action.
 
 
 == Frequently Asked Questions ==
