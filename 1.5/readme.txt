@@ -1,7 +1,7 @@
 === Wp-Insert ===
 Contributors: Namith Jawahar 
 Donate link:http://www.wp-insert.smartlogix.co.in/
-Tags: adsense,google
+Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized
 Requires at least: 2.7
 Tested up to: 2.8.6
 Stable tag: 1.5
@@ -10,7 +10,7 @@ Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin
 
 == Description ==
 
-**WP-INSERT by <a href="http://www.smartlogix.co.in/" target="_self" title="Smart Logix">http://www.smartlogix.co.in/</a> : The ultimate wordpress plugin**  
+**WP-INSERT by <a href="http://www.smartlogix.co.in/" target="_self" title="Smart Logix">Smart Logix</a> : The ultimate wordpress plugin**  
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.  
 Wp-Insert can manage your feeds, google analytics, blog editing and even make editing your themes easier for you.  
 All from within a well contained and easy to use interface.  
@@ -18,7 +18,7 @@ All from within a well contained and easy to use interface.
 Manage Ads (Completely Rewritten with a New and Powerful Interface)  
 **Multiple Ad Network Support.** (You can now run any ad-network along with adsense or any other network)  
 (Give the New Ad Manager a try)  
-   * In post ads - Allows you to insert your ads around and inside your content*
+    *In post ads - Allows you to insert your ads around and inside your content*
 
 *   Allows copy/past of html, adsense and other ads code
 *   Insert Ads above the content 
@@ -31,7 +31,7 @@ Manage Ads (Completely Rewritten with a New and Powerful Interface)
 *   Option to fiter ads from specified posts/pages (With Popup picker for selecting the posts / pages)
 *   Option to control each and every ad
 
-  *  10 ad widgets at your disposal *
+    *10 ad widgets at your disposal*
 
 *   Go to the widgets page under "Appearance" and place the widgets onto the sidebars you want the ads to appear onto 
 *   Option to style the Ads 
@@ -79,15 +79,6 @@ All these features in an easy to use and novice user friendly interface which ca
 
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
 
-===  ===
-Contributors:  
-Tags: 
-Requires at least: 
-Tested up to: 
-Stable tag: 
-
-
-
 
 == Installation ==
 
@@ -95,6 +86,14 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 
 == Screenshots ==
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
 
 
 == Frequently Asked Questions ==
