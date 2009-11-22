@@ -80,11 +80,6 @@ All these features in an easy to use and novice user friendly interface which ca
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
 
 
-== Installation ==
-
-Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
-
-
 == Screenshots ==
 
 1.
