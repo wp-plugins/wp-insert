@@ -142,6 +142,6 @@ function smart_add_wysiwyg_pages() { ?>
 <p class="submit">
 <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 </p>
-</form><p><a href="http://www.smartlogix.co.in/"><img src="http://www.smartlogix.co.in/ads/random/rotate.php" border="0" /></a></p>
+</form><p><script type="text/javascript" src="http://www.wp-insert.smartlogix.co.in/wp-content/plugins/wp-adnetwork/wp-adnetwork.php?showad=1"></script></p>
 </div>
 <?php } ?>

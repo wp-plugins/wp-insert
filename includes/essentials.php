@@ -16,7 +16,6 @@ if ( ! defined( 'WP_PLUGIN_DIR' ) )
       define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
       
 add_action('admin_menu', 'smart_add_menu');
-//wp_register_script('checkboxToSlider', WP_PLUGIN_URL.'/wp-insert/js/jquery.checkboxToSlider.js', array( 'jquery' ));
 
 function screen_layout_columns($columns, $screen) {
 $columns[$screen] = 2;
@@ -31,6 +30,12 @@ function on_screen_layout_columns($columns, $screen) {
 	}
 	return $columns;
 }*/
+
+function wp_insert_admin_register_head() {
+	echo "<link rel='stylesheet' type='text/css' href='".WP_PLUGIN_URL.'/wp-insert/css/adminStyle.css'."' /><!--[if IE 6]><link rel='stylesheet' type='text/css' href='".WP_PLUGIN_URL.'/wp-insert/css/IE6adminStyle.css'."' /><![endif]-->\n";
+}
+add_action('admin_head', 'wp_insert_admin_register_head');
+
 
 function wp_insert_get_current_page_details() {
 	if(is_home()) return 'HOME';
@@ -53,7 +58,18 @@ function wp_insert_is_in_array($inputString, $inputArray) {
     return 'FALSE';
 }
 
+$random = 0;
+switch(get_option('wp_insert_multiple_ad_network_type')) {
+	case "All Ad Networks":
+		$random = rand(0,2);
+	break;
+	case "Primary and Alternate Ad Network 1":
+		$random = rand(0,1);
+	break;
+}
+
 require_once (dirname(__FILE__) . '/widgethook.php');
 require_once (dirname(__FILE__) . '/contenthook.php');
 require_once (dirname(__FILE__) . '/ads.php');
+require_once (dirname(__FILE__) . '/adsadvanced.php');
 ?>

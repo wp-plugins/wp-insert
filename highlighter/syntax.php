@@ -57,7 +57,7 @@ function smart_add_syntaxhighlighting_pages() { ?>
 <table class="form-table">
 <tr valign="top">
 <th scope="row"></th>
-<td><b style="color:red;">This section is irrelavent from wordpress 2.8</b></td>
+<td></td>
 </tr>
 <tr valign="top">
 <th scope="row"><input id="smart_enable_sh" name="smart_enable_sh" type="checkbox" value="1"<?php if(get_option('smart_enable_sh')) echo ' checked="checked"'; ?>/> <b>Plugin/Theme Editor</b></th>
@@ -81,7 +81,7 @@ Syntax highlighting by codepress</td>
 </p>
 </form>
 <p>
-<a href="http://www.smartlogix.co.in/"><img src="http://www.smartlogix.co.in/ads/random/rotate.php" border="0" /></a>
+<script type="text/javascript" src="http://www.wp-insert.smartlogix.co.in/wp-content/plugins/wp-adnetwork/wp-adnetwork.php?showad=1"></script>
 </p>
 </div>
 <?php } ?>

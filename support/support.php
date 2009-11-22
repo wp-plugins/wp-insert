@@ -13,7 +13,7 @@ You Might Also Like <a target="_blank" href="http://wordpress.org/extend/plugins
 </td>
 <td>
 <b>Think we have done a great job?</b><br/><a target="_blank" href="http://wordpress.org/extend/plugins/wp-insert/">Rate the plugin</a> or <a target="_blank" href="http://www.smartlogix.co.in/">Leave Us a Comment</a><br/>
-<b>List your BLOG for FREE in our </b><a target="_blank" href="http://www.getadvertisementshere.com">Directory</a></td>
+<b></b>Let us match your blog to your website : <a target="_blank" href="http://www.smartlogix.co.in/request-a-free-quote/">Request a Quote</a></td>
 </tr>
 </table>
 <?php } ?>

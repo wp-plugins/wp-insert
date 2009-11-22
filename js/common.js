@@ -24,12 +24,12 @@
 		if(document.getElementById(adBox1).style.display == "block") {
 			jQuery("#"+adBox1+"_button").animate({color: "red"}, 1500, "linear");
 			jQuery("#"+adBox0+"_button").animate({color: "#2f9303"}, 1500, "linear");
-			jQuery("#"+adBox1).animate({height: "0px"}, 500, "linear", function() { document.getElementById(adBox0).style.display = "block";jQuery("#"+adBox0).animate({height: "315px"}, 1000, "linear");document.getElementById(adBox1).style.display = "none"; } );
+			jQuery("#"+adBox1).animate({height: "0px"}, 500, "linear", function() { document.getElementById(adBox0).style.display = "block";jQuery("#"+adBox0).animate({height: "200px"}, 1000, "linear");document.getElementById(adBox1).style.display = "none"; } );
 		}
 		else {
 			jQuery("#"+adBox2+"_button").animate({color: "red"}, 1500, "linear");
 			jQuery("#"+adBox0+"_button").animate({color: "#2f9303"}, 1500, "linear");
-			jQuery("#"+adBox2).animate({height: "0px"}, 500, "linear", function() { document.getElementById(adBox0).style.display = "block";jQuery("#"+adBox0).animate({height: "315px"}, 1000, "linear");document.getElementById(adBox2).style.display = "none"; } );
+			jQuery("#"+adBox2).animate({height: "0px"}, 500, "linear", function() { document.getElementById(adBox0).style.display = "block";jQuery("#"+adBox0).animate({height: "200px"}, 1000, "linear");document.getElementById(adBox2).style.display = "none"; } );
 		}
 	}
  }

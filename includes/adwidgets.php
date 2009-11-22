@@ -1,19 +1,57 @@
 <?php
 function wp_insert_ad_widget_create($widgetID, $args) {	
 	extract($args);
+	
+	global $random;
 	$page_details = wp_insert_get_current_page_details();
+	
+	switch($random) {
+		case 0:
+			if(get_option('wp_insert_ad_widget_'.$widgetID.'_content') == '' ) { return ''; }
+		break;
+		case 1:
+			if(get_option('wp_insert_ad_widget_'.$widgetID.'_content_1') == '' ) { return ''; }
+		break;
+		case 2:
+			if(get_option('wp_insert_ad_widget_'.$widgetID.'_content_2') == '' ) { return ''; }
+		break;
+	}
+		
+	$ad_style = get_option('wp_insert_ad_widget_'.$widgetID.'_style');
+	if($ad_style == '') { $ad_style = 'margin: 5px; padding: 0px;'; }
+	
 	if(!get_option('wp_insert_ad_widget_'.$widgetID.'_exclude_home') && ($page_details == 'HOME')) {
 		$title = get_option('wp_insert_ad_widget_'.$widgetID.'_title');
 		echo $before_widget;
 		if($title != "") { echo $before_title.$title.$after_title; }
-		echo get_option('wp_insert_ad_widget_'.$widgetID.'_content');
+		switch($random) {
+			case 0:
+				echo '<div id="ad_widget_'.$widgetID.'" style="'.$ad_style.'">'.get_option('wp_insert_ad_widget_'.$widgetID.'_content').'</div>';
+			break;
+			case 1:
+				echo '<div id="ad_widget_'.$widgetID.'" style="'.$ad_style.'">'.get_option('wp_insert_ad_widget_'.$widgetID.'_content_1').'</div>';
+			break;
+			case 2:
+				echo '<div id="ad_widget_'.$widgetID.'" style="'.$ad_style.'">'.get_option('wp_insert_ad_widget_'.$widgetID.'_content_2').'</div>';
+			break;
+		}
 		echo $after_widget;
 	}
 	else if(!get_option('wp_insert_ad_widget_'.$widgetID.'_exclude_archives') && ($page_details == 'ARCHIVE')) {
 		$title = get_option('wp_insert_ad_widget_'.$widgetID.'_title');
 		echo $before_widget;
 		if($title != "") { echo $before_title.$title.$after_title; }
-		echo get_option('wp_insert_ad_widget_'.$widgetID.'_content');
+		switch($random) {
+			case 0:
+				echo '<div id="ad_widget_'.$widgetID.'" style="'.$ad_style.'">'.get_option('wp_insert_ad_widget_'.$widgetID.'_content').'</div>';
+			break;
+			case 1:
+				echo '<div id="ad_widget_'.$widgetID.'" style="'.$ad_style.'">'.get_option('wp_insert_ad_widget_'.$widgetID.'_content_1').'</div>';
+			break;
+			case 2:
+				echo '<div id="ad_widget_'.$widgetID.'" style="'.$ad_style.'">'.get_option('wp_insert_ad_widget_'.$widgetID.'_content_2').'</div>';
+			break;
+		}
 		echo $after_widget;
 	}
 	else {
@@ -23,7 +61,17 @@ function wp_insert_ad_widget_create($widgetID, $args) {
 				$title = get_option('wp_insert_ad_widget_'.$widgetID.'_title');
 				echo $before_widget;
 				if($title != "") { echo $before_title.$title.$after_title; }
-				echo get_option('wp_insert_ad_widget_'.$widgetID.'_content');
+				switch($random) {
+					case 0:
+						echo '<div id="ad_widget_'.$widgetID.'" style="'.$ad_style.'">'.get_option('wp_insert_ad_widget_'.$widgetID.'_content').'</div>';
+					break;
+					case 1:
+						echo '<div id="ad_widget_'.$widgetID.'" style="'.$ad_style.'">'.get_option('wp_insert_ad_widget_'.$widgetID.'_content_1').'</div>';
+					break;
+					case 2:
+						echo '<div id="ad_widget_'.$widgetID.'" style="'.$ad_style.'">'.get_option('wp_insert_ad_widget_'.$widgetID.'_content_2').'</div>';
+					break;
+				}		
 				echo $after_widget;
 			}
 		}

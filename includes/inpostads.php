@@ -1,13 +1,4 @@
 <?php
-$random = 0;
-switch(get_option('wp_insert_multiple_ad_network_type')) {
-	case "All Ad Networks":
-		$random = rand(0,2);
-	break;
-	case "Primary and Alternate Ad Network 1":
-		$random = rand(0,1);
-	break;
-}
 function wp_insert_filter_content_ads($content, $ad_ID) {
 	$output = '';
 	global $random;

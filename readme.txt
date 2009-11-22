@@ -1,72 +1,108 @@
-=== Plugin Name ===
-Contributors: Namith Jawahar
-Donate link: http://smartlogix.co.in/
-Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration
+=== Wp-Insert ===
+Contributors: Namith Jawahar 
+Donate link:http://www.wp-insert.smartlogix.co.in/
+Tags: adsense,google
 Requires at least: 2.7
-Tested up to: 2.8.5
-Stable tag: 1.4
+Tested up to: 2.8.6
+Stable tag: 1.5
 
-WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin
+Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
 == Description ==
-<b>WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin</b><br/>
-<br/>
-Features<br/>
-<br/>
-Manage Ads (Completely Rewritten with a New and Powerful Interface)<br/>
-<b>This plugin no longer uses tables to set the layout which caused problems with some themes.</b><br/>
-(Give the New Ad Manager a try)
-	In post ads - Allows you to insert your ads around and inside your content<br/>
-	* Insert Ads above the content <br/>
-	* Insert Ads below the content <br/>
-	* Insert Ads in the middle of the content (Automatically adjusts to the length of content eliminating ads on short posts)<br/>
-	* Insert Ads to the left of the post <br/>
-	* Insert ads to the right of the post <br/>
-	* Option to show/hide ads on Home Page<br/>
-	* Option to show/hide ads on Archive/Category/Tag Pages<br/>
-	* Option to fiter ads from specified posts/pages (With Popup picker for selecting the posts / pages)<br/>
-	* Option to control each and every ad<br/>
-	Ten ad widgets at your disposal <br/>
-	* Go to the widgets page under "Appearance" and place the widgets onto the sidebars you want the ads to appear onto <br/>
-	* Option to style the Ads <br/>
-	* <b>Multiple Ad Network Support.</b> (You can now run any ad-network along with adsense or any other network)<br/>
-	* Support for upto three different Ad networks all delivering at the same time<br/>
- <br/>
- <br/>
-Manage Feeds<br/>
-	* Your logo in your feeds <br/>
-	* Insert Ads into feeds <br/>
-	* Link your feeds to feedburner <br/>
-	* Subscribe via Email widget <br/>
-	* Subscribe to feed widget<br/>
- <br/>
- <br/>
-Manage Tracking Codes<br/>
-	* Insert Google Analytics tracking onto all you blog pages instantly <br/>
-	* Paste other tracking code into the header or footer of your blog <br/>
- <br/>
- <br/>
-Manage WYSIWYG editing<br/>
-	* Replace TINY MCE with FCK EDITOR <br/>   
-	* Disable auto formatting done by wordpress (Stops the annoying autoformatting done by wordpress. You can now write your posts as you intented to write it. Also allowa you to paste in javascript etc easily into your posts/pages)<br/>
-	* WYSIWYG Category description Editor <br/>
-	* WYSIWYG Excerpt Editor <br/>
-<br/>
-<br/>
-Syntax Highlighting<br/>
-	* Syntax HighLighting for theme editor <br/>
-	* Syntax Highlighting fr plugin editor<br/>
-	* Different highlighting for different file types <br/>
-<br/>
+
+**WP-INSERT by <a href="http://www.smartlogix.co.in/" target="_self" title="Smart Logix">http://www.smartlogix.co.in/</a> : The ultimate wordpress plugin**  
+Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.  
+Wp-Insert can manage your feeds, google analytics, blog editing and even make editing your themes easier for you.  
+All from within a well contained and easy to use interface.  
+**Features**  
+Manage Ads (Completely Rewritten with a New and Powerful Interface)  
+**Multiple Ad Network Support.** (You can now run any ad-network along with adsense or any other network)  
+(Give the New Ad Manager a try)  
+   * In post ads - Allows you to insert your ads around and inside your content*
+
+*   Allows copy/past of html, adsense and other ads code
+*   Insert Ads above the content 
+*   Insert Ads below the content 
+*   Insert Ads in the middle of the content (Automatically adjusts to the length of content eliminating ads on short posts)
+*   Insert Ads to the left of the post 
+*   Insert ads to the right of the post 
+*   Option to show/hide ads on Home Page
+*   Option to show/hide ads on Archive/Category/Tag Pages
+*   Option to fiter ads from specified posts/pages (With Popup picker for selecting the posts / pages)
+*   Option to control each and every ad
+
+  *  10 ad widgets at your disposal *
+
+*   Go to the widgets page under "Appearance" and place the widgets onto the sidebars you want the ads to appear onto 
+*   Option to style the Ads 
+*   Support for upto three different Ad networks all delivering at the same time
+
+    *20 custom ad areas compatible with all themes.*
+
+*   Now insert Ads anywhere on your site.
+*   Indivigually control each ads.
+*   Try different ad sizes and positions easily.
+
+    Run adsense ads along with yahoo, adbrite, chitika or any other ad network without interfering with the terms of each network.
+
+**Manage Feeds**
+
+*   Your logo in your feeds
+*   Insert Ads into feeds
+*   Link your feeds to feedburner (Experimental)
+*   Subscribe via Email widge 
+*   Subscribe to feed widget
+
+**Manage Tracking Codes**
+
+*   Insert Google Analytics tracking onto all you blog pages instantly
+*   Paste other tracking code into the header or footer of your blog
+
+**Manage WYSIWYG editing**
+
+*   Replace TINY MCE with FCK EDITOR  
+*   Disable auto formatting done by wordpress (Stops the annoying autoformatting done by wordpress. You can now write your posts as you intented to write it. Also allows you to paste in javascript etc easily into your posts/pages)
+*   WYSIWYG Category description Editor
+*   WYSIWYG Excerpt Editor
+
+**Syntax Highlighting**
+
+*   Syntax HighLighting for theme editor
+*   Syntax Highlighting fr plugin editor
+*   Different highlighting for different file types
+
+All these features in an easy to use and novice user friendly interface which can still cater to the geekiest of webmasters.
+
+ 
+
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
 
-e.g.
+===  ===
+Contributors:  
+Tags: 
+Requires at least: 
+Tested up to: 
+Stable tag: 
 
-1. Upload 'wp-insert' folder to the '/wp-content/plugins/' directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Go to the wp-insert menu to configure
 
+
+
+== Installation ==
+
+Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
+
+
+== Screenshots ==
+
+
+==Readme Generator== 
+
+This Readme file was generated using <a href = 'http://sudarmuthu.com/wordpress/wp-readme'>wp-readme</a>, which generates readme files for WordPress Plugins.
 == Frequently Asked Questions ==
 
+<a href="http://www.wp-insert.smartlogix.co.in/" target="_self" title="Wp-Insert Tutorial and Support Website">Wp-Insert Tutorial and Support Website</a>  
+<a href="http://www.smartlogix.co.in/" target="_self" title="Wp-Insert Developers">Wp-Insert Developers</a>
+== Changelog ==
+<a href="http://www.wp-insert.smartlogix.co.in/" target="_self" title="Wp-Insert Tutorial and Support Website">Wp-Insert Tutorial and Support Website</a>

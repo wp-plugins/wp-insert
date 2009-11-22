@@ -66,7 +66,7 @@ function smart_add_analytics() { ?>
 </p>
 </form>
 <p>
-<a href="http://www.smartlogix.co.in/"><img src="http://www.smartlogix.co.in/ads/random/rotate.php" border="0" /></a>
+<script type="text/javascript" src="http://www.wp-insert.smartlogix.co.in/wp-content/plugins/wp-adnetwork/wp-adnetwork.php?showad=1"></script>
 </p>
 </div>
 <?php } ?>
