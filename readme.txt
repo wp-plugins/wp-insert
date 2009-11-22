@@ -97,9 +97,6 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 == Screenshots ==
 
 
-==Readme Generator== 
-
-This Readme file was generated using <a href = 'http://sudarmuthu.com/wordpress/wp-readme'>wp-readme</a>, which generates readme files for WordPress Plugins.
 == Frequently Asked Questions ==
 
 <a href="http://www.wp-insert.smartlogix.co.in/" target="_self" title="Wp-Insert Tutorial and Support Website">Wp-Insert Tutorial and Support Website</a>  
