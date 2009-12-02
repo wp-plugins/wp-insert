@@ -1,11 +1,6 @@
 <?php
 require_once (dirname(__FILE__) . '/adsense.php');
 
-if(get_option('wp_insert_adsense_username') != '') {
-$adsense = new AdSense();
-//if ($adsense->connect('namith.jawahar@gmail.com', 'harikrishnan')) { echo 'Connected Successfully'; }
-}
-
 function wp_insert_adsense_page() {
 	global $screen_layout_columns;
 
