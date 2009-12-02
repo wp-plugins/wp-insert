@@ -2,60 +2,17 @@
 function wp_insert_add_feedspage() {
 	global $screen_layout_columns;
 
-add_meta_box('wp_insert_feed_logo', 'Logo for your Feed', 'wp_insert_feed_logo_HTML', 'feedLogo');
-add_meta_box('wp_insert_subscribe_widget_1', 'Subscribe Widget : Type 1', 'wp_insert_subscribe_widget_1_HTML', 'subscribeWidgets');
-add_meta_box('wp_insert_subscribe_widget_2', 'Subscribe Widget : Type 2', 'wp_insert_subscribe_widget_2_HTML', 'subscribeWidgets');
-add_meta_box('wp_insert_subscribe_widget_3', 'Subscribe Widget : Type 3', 'wp_insert_subscribe_widget_3_HTML', 'subscribeWidgets');
-add_meta_box('wp_insert_feed_ad_top', 'Ad - Above Feed Content', 'wp_insert_feed_ad_top_HTML', 'inFeedAds');
-add_meta_box('wp_insert_feed_ad_bottom', 'Ad - Below Feed Content', 'wp_insert_feed_ad_bottom_HTML', 'inFeedAds');
-add_meta_box('wp_insert_feed_feedburner', 'FeedBurner Feed URL', 'wp_insert_feed_feedburner_HTML', 'feedburner');
-add_meta_box('wp_insert_feed_feedburner_email', 'FeedBurner - Subscribe via Email Widget', 'wp_insert_feed_feedburner_email_HTML', 'feedburner');
-?>
-<div id="post_ads_container" class="wrap">
-<?php screen_icon('options-general'); ?>
-<h2>WP-INSERT : Manage Feeds</h2>
-<div class="updated fade below-h2" id="message" style="opacity:0;display:none;"><p>Changes have been made to this page.  Please click <b>Save Changes</b> to make them permanent</p></div>
-<form method="post" action="options.php">
-<?php
-wp_nonce_field('update-options');
-wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
-wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
-?>
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/common.js"></script>
-			<div id="poststuff" class="metabox-holder has-right-sidebar">
-				<div id="side-info-column" class="inner-sidebar">
-				<?php do_meta_boxes('feedLogo','advanced',null); ?>
-				<?php do_meta_boxes('subscribeWidgets','advanced',null); ?>
-				</div>
-				<div id="post-body" class="has-sidebar">				
-					<div id="post-body-content" class="has-sidebar-content">
-						<?php do_meta_boxes('inFeedAds','advanced',null); ?>
-						<?php do_meta_boxes('feedburner','advanced',null); ?>
-						<input type="hidden" name="action" value="update" />
-						<input type="hidden" name="page_options" value="" />
-						<p class="submit">
-					    	<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
-						</p>
-					</div>
-				</div>
-				<br class="clear"/>
-								
-			</div>	
-		</form>
-		</div>
-	<script type="text/javascript">
-		//<![CDATA[
-		jQuery(document).ready( function($) {
-			// close postboxes that should be closed
-			jQuery('.if-js-closed').removeClass('if-js-closed').addClass('closed');
-			jQuery('.postbox').addClass('closed');
-			// postboxes setup
-			postboxes.add_postbox_toggles('wp-insert');
-		});
-		//]]>
-	</script>
-</div>
-<?php
+add_meta_box('wp_insert_feed_ad_top', 'Ad - Above Feed Content', 'wp_insert_feed_ad_top_HTML', 'col_1');
+add_meta_box('wp_insert_feed_ad_bottom', 'Ad - Below Feed Content', 'wp_insert_feed_ad_bottom_HTML', 'col_1');
+add_meta_box('wp_insert_post_feed_feedburner', 'FeedBurner Feed URL', 'wp_insert_feed_feedburner_HTML', 'col_1');
+add_meta_box('wp_insert_comments_feed_feedburner', 'FeedBurner Comments Feed URL', 'wp_insert_feed_feedburner_HTML', 'col_1');
+add_meta_box('wp_insert_feed_logo', 'Logo for your Feed', 'wp_insert_feed_logo_HTML', 'col_1');
+add_meta_box('wp_insert_feed_feedburner_email', 'FeedBurner - Subscribe via Email Widget', 'wp_insert_feed_feedburner_email_HTML', 'col_1');
+add_meta_box('wp_insert_subscribe_widget_1', 'Subscribe Widget : Type 1', 'wp_insert_subscribe_widget_1_HTML', 'col_1');
+add_meta_box('wp_insert_subscribe_widget_2', 'Subscribe Widget : Type 2', 'wp_insert_subscribe_widget_2_HTML', 'col_1');
+add_meta_box('wp_insert_subscribe_widget_3', 'Subscribe Widget : Type 3', 'wp_insert_subscribe_widget_3_HTML', 'col_1');
+
+wp_insert_settings_page_layout('', 'WP-INSERT : Feeds', 'feeds');
 }
 
 function wp_insert_subscribe_widget_HTML($widgetID) { ?>

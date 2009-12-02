@@ -4,17 +4,6 @@ require_once (dirname(__FILE__) . '/templateads.php');
 function wp_insert_add_advanced_spage() {
 	global $screen_layout_columns;
 
-	add_meta_box('wp_insert_ad_template_11', 'Template Ad : 11', 'wp_insert_ad_template_11_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_template_12', 'Template Ad : 12', 'wp_insert_ad_template_12_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_template_13', 'Template Ad : 13', 'wp_insert_ad_template_13_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_template_14', 'Template Ad : 14', 'wp_insert_ad_template_14_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_template_15', 'Template Ad : 15', 'wp_insert_ad_template_15_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_template_16', 'Template Ad : 16', 'wp_insert_ad_template_16_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_template_17', 'Template Ad : 17', 'wp_insert_ad_template_17_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_template_18', 'Template Ad : 18', 'wp_insert_ad_template_18_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_template_19', 'Template Ad : 19', 'wp_insert_ad_template_19_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_template_20', 'Template Ad : 20', 'wp_insert_ad_template_20_HTML', 'col_2');
-
 	add_meta_box('wp_insert_multiple_ad_network', 'Multiple Ad Networks', 'wp_insert_multiple_ad_network_HTML', 'col_1');
 	add_meta_box('wp_insert_ad_template_1', 'Template Ad : 1', 'wp_insert_ad_template_1_HTML', 'col_1');
 	add_meta_box('wp_insert_ad_template_2', 'Template Ad : 2', 'wp_insert_ad_template_2_HTML', 'col_1');
@@ -26,9 +15,19 @@ function wp_insert_add_advanced_spage() {
 	add_meta_box('wp_insert_ad_template_8', 'Template Ad : 8', 'wp_insert_ad_template_8_HTML', 'col_1');
 	add_meta_box('wp_insert_ad_template_9', 'Template Ad : 9', 'wp_insert_ad_template_9_HTML', 'col_1');
 	add_meta_box('wp_insert_ad_template_10', 'Template Ad : 10', 'wp_insert_ad_template_10_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_11', 'Template Ad : 11', 'wp_insert_ad_template_11_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_12', 'Template Ad : 12', 'wp_insert_ad_template_12_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_13', 'Template Ad : 13', 'wp_insert_ad_template_13_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_14', 'Template Ad : 14', 'wp_insert_ad_template_14_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_15', 'Template Ad : 15', 'wp_insert_ad_template_15_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_16', 'Template Ad : 16', 'wp_insert_ad_template_16_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_17', 'Template Ad : 17', 'wp_insert_ad_template_17_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_18', 'Template Ad : 18', 'wp_insert_ad_template_18_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_19', 'Template Ad : 19', 'wp_insert_ad_template_19_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_template_20', 'Template Ad : 20', 'wp_insert_ad_template_20_HTML', 'col_1');
 
 	$parameters = 'wp_insert_multiple_ad_network_type,'.wp_insert_ad_template_parameters('1').','.wp_insert_ad_template_parameters('2').','.wp_insert_ad_template_parameters('3').','.wp_insert_ad_template_parameters('4').','.wp_insert_ad_template_parameters('5').','.wp_insert_ad_template_parameters('6').','.wp_insert_ad_template_parameters('7').','.wp_insert_ad_template_parameters('8').','.wp_insert_ad_template_parameters('9').','.wp_insert_ad_template_parameters('10').','.wp_insert_ad_template_parameters('11').','.wp_insert_ad_template_parameters('12').','.wp_insert_ad_template_parameters('13').','.wp_insert_ad_template_parameters('14').','.wp_insert_ad_template_parameters('15').','.wp_insert_ad_template_parameters('16').','.wp_insert_ad_template_parameters('17').','.wp_insert_ad_template_parameters('18').','.wp_insert_ad_template_parameters('19').','.wp_insert_ad_template_parameters('20');
-	wp_insert_settings_page_layout($parameters);
+	wp_insert_settings_page_layout($parameters, 'WP-INSERT : Manage Ads (Template Tags)', 'ads');
 }
 
 function wp_insert_ad_template_parameters($template_adID) 	{ return wp_insert_ad_parameters($template_adID, 'template_ad'); }

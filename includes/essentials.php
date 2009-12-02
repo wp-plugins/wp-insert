@@ -68,8 +68,64 @@ switch(get_option('wp_insert_multiple_ad_network_type')) {
 	break;
 }
 
+function wp_insert_settings_page_layout($page_parameters, $page_title, $page_type) { ?>
+<div id="post_ads_container" class="wrap">
+<?php screen_icon('options-general'); ?>
+<h2><?php echo $page_title; ?></h2>
+<div class="updated fade below-h2" id="message" style="opacity:0;display:none;"><p>Changes have been made to this page.  Please click <b>Save Changes</b> to make them permanent</p></div>
+<?php show_support_options(); ?>
+<form method="post" action="options.php">
+<?php
+wp_nonce_field('update-options');
+wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
+wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
+?>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.core.js"></script>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.draggable.js"></script>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery.corner.js"></script>
+<?php if($page_type == 'ads') { require_once (dirname(__FILE__) . '/postpicker.php'); } ?>
+
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/common.js"></script>
+			<div id="poststuff" class="metabox-holder has-right-sidebar">
+				<div id="side-info-column" class="inner-sidebar">
+				<p style="text-align:center;">
+					<script type="text/javascript" src="http://www.wp-insert.smartlogix.co.in/wp-content/plugins/wp-adnetwork/wp-adnetwork.php?showad=1"></script>
+				</p>
+				<?php do_meta_boxes('col_2','advanced',null); ?>
+				<p class="submit wp-insert-submit">
+					<input type="hidden" name="action" value="update" />
+					<input type="hidden" name="page_options" value="<?php echo $page_parameters; ?>" />
+					<input type="submit" id="submit" class="button-primary button-wp-insert" value="<?php _e('Save Changes') ?>" />
+				</p>
+				</div>
+				<div id="post-body" class="has-sidebar">				
+					<div id="post-body-content" class="has-sidebar-content">
+						<?php do_meta_boxes('col_1','advanced',null); ?>
+					</div>
+				</div>
+				<br class="clear"/>			
+			</div>	
+		</form>
+		</div>
+	<script type="text/javascript">
+		//<![CDATA[
+		jQuery(document).ready( function($) {
+			// close postboxes that should be closed
+			jQuery('.if-js-closed').removeClass('if-js-closed').addClass('closed');
+			jQuery('.postbox').addClass('closed');
+			// postboxes setup
+			postboxes.add_postbox_toggles('wp-insert');
+		});
+		//]]>
+	</script>
+</div>
+<?php }
+
+
 require_once (dirname(__FILE__) . '/widgethook.php');
 require_once (dirname(__FILE__) . '/contenthook.php');
 require_once (dirname(__FILE__) . '/ads.php');
 require_once (dirname(__FILE__) . '/adsadvanced.php');
+require_once (dirname(__FILE__) . '/adsenseperformance.php');
+require_once (dirname(__FILE__) . '/feeds.php');
 ?>

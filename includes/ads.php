@@ -6,6 +6,7 @@ function smart_add_menu() {
 	add_menu_page('Wp-Insert', 'Wp-Insert', 8, __FILE__);
 	add_submenu_page(__FILE__, 'wp-insert', 'Manage Ads<br/>(Posts and Sidebars)', 8, __FILE__, 'wp_insert_add_adspage');
 	add_submenu_page(__FILE__, 'wp-insert', 'Manage Ads<br/>(Template Tags)', 8, 'Manage Ads Advanced', 'wp_insert_add_advanced_spage');
+	//add_submenu_page(__FILE__, 'wp-insert', 'Adsense Performance', 8, 'Adsense Performance', 'wp_insert_adsense_page');
 	add_submenu_page(__FILE__, 'wp-insert', 'Manage Feeds', 8, 'Manage Feeds', 'smart_add_feedspage');
 	add_submenu_page(__FILE__, 'wp-insert', 'Tracking Codes', 8, 'Tracking Codes', 'smart_add_analytics');
 	add_submenu_page(__FILE__, 'wp-insert', 'WYSIWYG Editor', 8, 'WYSIWYG Editor', 'smart_add_wysiwyg_pages');
@@ -21,80 +22,26 @@ wp_enqueue_script('postbox');
 function wp_insert_add_adspage() {
 	global $screen_layout_columns;
 
-	add_meta_box('wp_insert_ad_widget_1', 'Ad Widget : 1', 'wp_insert_ad_widget_1_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_widget_2', 'Ad Widget : 2', 'wp_insert_ad_widget_2_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_widget_3', 'Ad Widget : 3', 'wp_insert_ad_widget_3_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_widget_4', 'Ad Widget : 4', 'wp_insert_ad_widget_4_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_widget_5', 'Ad Widget : 5', 'wp_insert_ad_widget_5_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_widget_6', 'Ad Widget : 6', 'wp_insert_ad_widget_6_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_widget_7', 'Ad Widget : 7', 'wp_insert_ad_widget_7_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_widget_8', 'Ad Widget : 8', 'wp_insert_ad_widget_8_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_widget_9', 'Ad Widget : 9', 'wp_insert_ad_widget_9_HTML', 'col_2');
-	add_meta_box('wp_insert_ad_widget_10', 'Ad Widget : 10', 'wp_insert_ad_widget_10_HTML', 'col_2');
-
 	add_meta_box('wp_insert_multiple_ad_network', 'Multiple Ad Networks', 'wp_insert_multiple_ad_network_HTML', 'col_1');
 	add_meta_box('wp_insert_in_post_ad_top_1', 'Ad - Above Post Content', 'wp_insert_in_post_ad_top_1_HTML', 'col_1');
 	add_meta_box('wp_insert_in_post_ad_bottom_1', 'Ad - Below Post Content', 'wp_insert_in_post_ad_bottom_1_HTML', 'col_1');
 	add_meta_box('wp_insert_in_post_ad_left_1', 'Ad - Left of Post Content', 'wp_insert_in_post_ad_left_1_HTML', 'col_1');
 	add_meta_box('wp_insert_in_post_ad_right_1', 'Ad - Right of Post Content', 'wp_insert_in_post_ad_right_1_HTML', 'col_1');
 	add_meta_box('wp_insert_in_post_ad_middle_1', 'Ad - Middle of Post Content', 'wp_insert_in_post_ad_middle_1_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_1', 'Ad Widget : 1', 'wp_insert_ad_widget_1_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_2', 'Ad Widget : 2', 'wp_insert_ad_widget_2_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_3', 'Ad Widget : 3', 'wp_insert_ad_widget_3_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_4', 'Ad Widget : 4', 'wp_insert_ad_widget_4_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_5', 'Ad Widget : 5', 'wp_insert_ad_widget_5_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_6', 'Ad Widget : 6', 'wp_insert_ad_widget_6_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_7', 'Ad Widget : 7', 'wp_insert_ad_widget_7_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_8', 'Ad Widget : 8', 'wp_insert_ad_widget_8_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_9', 'Ad Widget : 9', 'wp_insert_ad_widget_9_HTML', 'col_1');
+	add_meta_box('wp_insert_ad_widget_10', 'Ad Widget : 10', 'wp_insert_ad_widget_10_HTML', 'col_1');
 
 	$parameters = 'wp_insert_multiple_ad_network_type,'.wp_insert_in_post_ad_parameters('middle_1').','.wp_insert_in_post_ad_parameters('right_1').','.wp_insert_in_post_ad_parameters('left_1').','.wp_insert_in_post_ad_parameters('bottom_1').','.wp_insert_in_post_ad_parameters('top_1').','.wp_insert_ad_widget_parameters(1).','.wp_insert_ad_widget_parameters(2).','.wp_insert_ad_widget_parameters(3).','.wp_insert_ad_widget_parameters(4).','.wp_insert_ad_widget_parameters(5).','.wp_insert_ad_widget_parameters(6).','.wp_insert_ad_widget_parameters(7).','.wp_insert_ad_widget_parameters(8).','.wp_insert_ad_widget_parameters(9).','.wp_insert_ad_widget_parameters(10);
-	wp_insert_settings_page_layout($parameters);
+	wp_insert_settings_page_layout($parameters, 'WP-INSERT : Manage Ads (Posts and Sidebars)', 'ads');
 }
-
-function wp_insert_settings_page_layout($page_parameters) { ?>
-<div id="post_ads_container" class="wrap">
-<?php screen_icon('options-general'); ?>
-<h2>WP-INSERT : Manage Ads (Posts and Sidebars)</h2>
-<div class="updated fade below-h2" id="message" style="opacity:0;display:none;"><p>Changes have been made to this page.  Please click <b>Save Changes</b> to make them permanent</p></div>
-<?php show_support_options(); ?>
-<form method="post" action="options.php">
-<?php
-wp_nonce_field('update-options');
-wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
-wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
-?>
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.core.js"></script>
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.draggable.js"></script>
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery.corner.js"></script>
-<?php require_once (dirname(__FILE__) . '/postpicker.php'); ?>
-
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/common.js"></script>
-			<div id="poststuff" class="metabox-holder has-right-sidebar">
-				<div id="side-info-column" class="inner-sidebar">
-				<?php do_meta_boxes('col_2','advanced',null); ?>
-				</div>
-				<div id="post-body" class="has-sidebar">				
-					<div id="post-body-content" class="has-sidebar-content">
-						<?php do_meta_boxes('col_1','advanced',null); ?>
-						<input type="hidden" name="action" value="update" />
-						<input type="hidden" name="page_options" value="<?php echo $page_parameters; ?>" />
-						<p class="submit">
-					    	<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
-						</p>
-						<p>
-							<script type="text/javascript" src="http://www.wp-insert.smartlogix.co.in/wp-content/plugins/wp-adnetwork/wp-adnetwork.php?showad=1"></script>
-						</p>
-					</div>
-				</div>
-				<br class="clear"/>			
-			</div>	
-		</form>
-		</div>
-	<script type="text/javascript">
-		//<![CDATA[
-		jQuery(document).ready( function($) {
-			// close postboxes that should be closed
-			jQuery('.if-js-closed').removeClass('if-js-closed').addClass('closed');
-			jQuery('.postbox').addClass('closed');
-			// postboxes setup
-			postboxes.add_postbox_toggles('wp-insert');
-		});
-		//]]>
-	</script>
-</div>
-<?php }
 
 function wp_insert_in_post_ad_parameters($in_post_adID) 	{ return wp_insert_ad_parameters($in_post_adID, 'in_post_ad'); }
 function wp_insert_in_post_ad_top_1_HTML() 					{ wp_insert_ad_HTML('top_1', 'in_post_ad'); }

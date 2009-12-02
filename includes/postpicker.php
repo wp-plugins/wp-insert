@@ -224,7 +224,7 @@ function SavePostPicker(sender) {
 function ShowPostPicker(sender) {
 	sender = document.getElementById(sender);
 	GreyOutScreen();
-    divPopup = CreatePopUp("Select Posts/Pages", 525, 390, (GetPageHeight() / 2) - 262, (GetPageWidth() / 2) - 195);
+    divPopup = CreatePopUp("Select Posts/Pages", 525, 390, YPos(sender) - 375, XPos(sender) + 150);
 
 	<?php 
 	$count = 0;
