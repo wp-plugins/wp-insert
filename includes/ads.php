@@ -11,7 +11,6 @@ function smart_add_menu() {
 	add_submenu_page(__FILE__, 'wp-insert', 'Tracking Codes', 8, 'Tracking Codes', 'smart_add_analytics');
 	add_submenu_page(__FILE__, 'wp-insert', 'WYSIWYG Editor', 8, 'WYSIWYG Editor', 'smart_add_wysiwyg_pages');
 	add_submenu_page(__FILE__, 'wp-insert', 'Syntax Highlighting', 8, 'Syntax Highlighting', 'smart_add_syntaxhighlighting_pages');
-	//add_submenu_page(__FILE__, 'wp-insert', 'Tracking Codes', 8, 'Manage Feeds', 'wp_insert_add_trackingpage');
 	//ensure, that the needed javascripts been loaded to allow drag/drop, expand/collapse and hide/show of boxes
 wp_enqueue_script('common');
 wp_enqueue_script('wp-lists');
@@ -66,7 +65,7 @@ function wp_insert_multiple_ad_network_HTML() {
 if(!get_option('wp_insert_multiple_ad_network_type')) { add_option("wp_insert_multiple_ad_network_type", 'Primary Ad Network Only', '', 'yes'); }
 ?>
 <div>
-Select the Multiple Ad Network Setup that best suits you : <select name="wp_insert_multiple_ad_network_type" id="wp_insert_multiple_ad_network_type">
+Select the Multiple Ad Network Setup that best suits you : <select name="wp_insert_multiple_ad_network_type" id="wp_insert_multiple_ad_network_type" onchange="wpInsertToggleNotSavedAlert()" >
   <?php
     $multiple_ad_network_types = array("Primary Ad Network Only","Primary and Alternate Ad Network 1","All Ad Networks");
     $output = '';
@@ -100,14 +99,14 @@ function wp_insert_ad_HTML($adID, $ad_type) { ?>
 <?php if($ad_type == 'template_ad') { ?>
 <p>
 <label for="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_insertion_code">Code to add in your theme:</label>
-<input id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_insertion_code" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_insertion_code" type="text" style="border: medium none ; padding: 3px; font-size: 11px; width: 100%; display: inline;" class="widefat"  readonly="true" value="&lt;?php if(function_exists('wp_template_ad')) { wp_template_ad('<?php echo $adID; ?>'); } ?&gt;"/>
+<input id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_insertion_code" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_insertion_code" type="text" style="border: medium none ; padding: 3px; font-size: 11px; width: 100%; display: inline;" class="widefat"  readonly="true" value="&lt;?php if(function_exists('wp_template_ad')) { wp_template_ad('<?php echo $adID; ?>'); } ?&gt;" />
 </p>
 <?php } ?>
 
 <?php if($ad_type == 'ad_widget') { ?>
 <p>
 <label for="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_title">Title:</label>
-<input id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_title" class="widefat" type="text" value="<?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_title'); ?>" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_title"/>
+<input id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_title" class="widefat" type="text" value="<?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_title'); ?>" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_title" onchange="wpInsertToggleNotSavedAlert()" />
 </p>
 <?php } ?>
 
@@ -115,29 +114,29 @@ function wp_insert_ad_HTML($adID, $ad_type) { ?>
 <?php if((get_option('wp_insert_multiple_ad_network_type') == "Primary and Alternate Ad Network 1") || (get_option('wp_insert_multiple_ad_network_type') == "All Ad Networks")) { ?><input type="button" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_button" value="Primary Ad Code" class="button" style="color:#2f9303;" onclick="SwitchAds('wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content','wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_1','wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_2')"/> <?php } else {?><label for="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content">Primary Ad Code:</label><?php } ?>
 <?php if((get_option('wp_insert_multiple_ad_network_type') == "Primary and Alternate Ad Network 1") || (get_option('wp_insert_multiple_ad_network_type') == "All Ad Networks")) { ?><input type="button" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_1_button" value="Alternative Ad Code : 1" class="button" style="color:red;" onclick="SwitchAds('wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_1','wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content','wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_2')"/> <?php } ?>
 <?php if(get_option('wp_insert_multiple_ad_network_type') == "All Ad Networks") { ?><input type="button" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_2_button" value="Alternative Ad Code : 2" class="button" style="color:red;" onclick="SwitchAds('wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_2','wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_1','wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content')"/> <?php } ?>
-<textarea style="display:block;height:200px;" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content" class="widefat" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content" cols="20" rows="16"><?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_content'); ?></textarea>
-<textarea style="display:none;height:0px;" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_1" class="widefat" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_1" cols="20" rows="16"><?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_content_1'); ?></textarea>
-<textarea style="display:none;height:0px;" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_2" class="widefat" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_2" cols="20" rows="16"><?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_content_2'); ?></textarea>
+<textarea style="display:block;height:200px;" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content" class="widefat" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content" cols="20" rows="16" onchange="wpInsertToggleNotSavedAlert()" ><?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_content'); ?></textarea>
+<textarea style="display:none;height:0px;" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_1" class="widefat" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_1" cols="20" rows="16" onchange="wpInsertToggleNotSavedAlert()" ><?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_content_1'); ?></textarea>
+<textarea style="display:none;height:0px;" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_2" class="widefat" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_content_2" cols="20" rows="16" onchange="wpInsertToggleNotSavedAlert()" ><?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_content_2'); ?></textarea>
 </div>
 
 <div style="margin:6px;">
 <label for="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_ids">Exclude On Posts/Pages:</label><div class="clear"></div>
-<input style="margin: 10px 6px 0pt; float: left; width: 60%;" class="widefat" type="text" value="<?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_exclude_ids'); ?>" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_ids" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_ids" />
+<input style="margin: 10px 6px 0pt; float: left; width: 60%;" class="widefat" type="text" value="<?php echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_exclude_ids'); ?>" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_ids" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_ids" onchange="wpInsertToggleNotSavedAlert()" />
 <img style="float:left; margin-top:14px; cursor: pointer;" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/images/search-16x16.png" width="16px" height="16px" onclick="ShowPostPicker('wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_ids')" />
 <div class="clear"></div>
 </div>
 <p>
 <label for="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_home">Exclude On Home Page:</label>
-<input id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_home" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_home" type="checkbox" value="1"<?php if(get_option('wp_insert_'.$ad_type.'_'.$adID.'_exclude_home')) echo ' checked="checked"'; ?> />
+<input id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_home" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_home" type="checkbox" value="1"<?php if(get_option('wp_insert_'.$ad_type.'_'.$adID.'_exclude_home')) echo ' checked="checked"'; ?>  onchange="wpInsertToggleNotSavedAlert()" />
 </p>
 <p>
 <label for="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_archives">Exclude On Archives Pages:</label>
-<input id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_archives" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_archives" type="checkbox" value="1"<?php if(get_option('wp_insert_'.$ad_type.'_'.$adID.'_exclude_archives')) echo ' checked="checked"'; ?> />
+<input id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_archives" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_exclude_archives" type="checkbox" value="1"<?php if(get_option('wp_insert_'.$ad_type.'_'.$adID.'_exclude_archives')) echo ' checked="checked"'; ?> onchange="wpInsertToggleNotSavedAlert()" />
 </p>
 
 <div style="margin:6px;padding: 6px;border: 1px solid #DDDDDD;">
 <label for="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_style">Ad Box CSS Styler</label><div class="clear"></div>
-<input style="float:left; width:60%; margin: 10px 6px 0pt;background: #FFEEEE;" class="widefat" type="text" value="<?php if(get_option('wp_insert_'.$ad_type.'_'.$adID.'_style') != '') { echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_style'); } else { echo 'margin: 5px;padding: 0px;'; } ?>" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_style" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_style" />
+<input style="float:left; width:60%; margin: 10px 6px 0pt;background: #FFEEEE;" class="widefat" type="text" value="<?php if(get_option('wp_insert_'.$ad_type.'_'.$adID.'_style') != '') { echo get_option('wp_insert_'.$ad_type.'_'.$adID.'_style'); } else { echo 'margin: 5px;padding: 0px;'; } ?>" name="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_style" id="wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_style" onchange="wpInsertToggleNotSavedAlert()" />
 <img style="float:left; margin-top:14px; cursor: pointer;" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/images/style-16x16.png" width="0px" height="0px" onclick="ShowStyler('wp_insert_<?php echo $ad_type; ?>_<?php echo $adID; ?>_style')" />
 <div class="clear"></div>
 </div>

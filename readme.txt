@@ -3,8 +3,8 @@ Contributors: Namith Jawahar
 Donate link:http://www.wp-insert.smartlogix.co.in/
 Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized
 Requires at least: 2.7
-Tested up to: 2.8.6
-Stable tag: 1.5.1
+Tested up to: 2.9
+Stable tag: 1.5.2
 
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
