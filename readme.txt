@@ -4,7 +4,7 @@ Donate link:http://www.wp-insert.smartlogix.co.in/
 Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized
 Requires at least: 2.7
 Tested up to: 2.9
-Stable tag: 1.5.3
+Stable tag: 1.6.0
 
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
@@ -44,6 +44,13 @@ Manage Ads (Completely Rewritten with a New and Powerful Interface)
 *   Try different ad sizes and positions easily.
 
     Run adsense ads along with yahoo, adbrite, chitika or any other ad network without interfering with the terms of each network.
+    
+**Manage Privacy Policy**
+
+*   Readymade Adsense Compatible privacy policy for your site.
+*   Create a Privacy policy page without even typing a Word.
+*   Assign Privacy Policy to an existing page or create one automatically.
+*	WYSIWYG Editor to finetune the Privacy Policy to your requirements.
 
 **Manage Feeds**
 
@@ -68,7 +75,7 @@ Manage Ads (Completely Rewritten with a New and Powerful Interface)
 **Syntax Highlighting**
 
 *   Syntax HighLighting for theme editor
-*   Syntax Highlighting fr plugin editor
+*   Syntax Highlighting for plugin editor
 *   Different highlighting for different file types
 
 All these features in an easy to use and novice user friendly interface which can still cater to the geekiest of webmasters.
@@ -90,6 +97,7 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 5. Wp-Insert in action.
 6. Wp-Insert in action.
 7. Wp-Insert in action.
+8. Wp-Insert in action.
 
 
 == Frequently Asked Questions ==
