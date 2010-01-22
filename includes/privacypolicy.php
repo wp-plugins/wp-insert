@@ -54,7 +54,7 @@ function wp_insert_privacy_policy_page() {
 	add_meta_box('wp_insert_edit_assign_privacy_policy_page', 'Assign Page for Privacy Policy', 'wp_insert_edit_assign_privacy_policy_page_HTML', 'col_1');
 
 	$parameters = 'wp_insert_privacy_policy_content';
-	wp_insert_settings_page_layout($parameters, 'WP-INSERT : Manage Privacy Policy', 'ads');
+	wp_insert_settings_page_layout($parameters, 'WP-INSERT : Manage Privacy Policy', 'privacy');
 }
 
 function wp_insert_edit_assign_privacy_policy_page_HTML() { ?>

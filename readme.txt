@@ -4,7 +4,7 @@ Donate link:http://www.wp-insert.smartlogix.co.in/
 Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized
 Requires at least: 2.7
 Tested up to: 2.9
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
@@ -52,6 +52,10 @@ Manage Ads (Completely Rewritten with a New and Powerful Interface)
 *   Assign Privacy Policy to an existing page or create one automatically.
 *	WYSIWYG Editor to finetune the Privacy Policy to your requirements.
 
+**Manage Pages**
+
+*   Reorder Pages using a drag and drop interface.
+
 **Manage Feeds**
 
 *   Your logo in your feeds
@@ -90,14 +94,15 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 == Screenshots ==
 
-1. Wp-Insert in action.
-2. Wp-Insert in action.
-3. Wp-Insert in action.
-4. Wp-Insert in action.
-5. Wp-Insert in action.
-6. Wp-Insert in action.
-7. Wp-Insert in action.
-8. Wp-Insert in action.
+1. Wp-Insert - Managing Ads (Auto insertion).
+2. Wp-Insert - Managing Ads using Template tags.
+3. Wp-Insert - Managing Feeds
+4. Wp-Insert - Managing Tracking Codes.
+5. Wp-Insert - Managing WYSIWYG editing.
+6. Wp-Insert - Syntax Highlighting.
+7. Wp-Insert - Adding an in post Ad.
+8. Wp-Insert - Managing Privacy policy.
+9. Wp-Insert - Reordering pages.
 
 
 == Frequently Asked Questions ==

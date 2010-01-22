@@ -80,11 +80,16 @@ wp_nonce_field('update-options');
 wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
 ?>
+<?php if($page_type == 'pages') { ?>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery-ui-1.7.1.custom.min.js"></script>
+<?php } ?>
+<?php if($page_type == 'ads') { ?>
 <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.core.js"></script>
 <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.draggable.js"></script>
 <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery.corner.js"></script>
-<?php if($page_type == 'ads') { require_once (dirname(__FILE__) . '/postpicker.php'); } ?>
-
+<?php 
+require_once (dirname(__FILE__) . '/postpicker.php');
+} ?>
 <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/common.js"></script>
 			<div id="poststuff" class="metabox-holder has-right-sidebar">
 				<div id="side-info-column" class="inner-sidebar">
@@ -126,6 +131,7 @@ require_once (dirname(__FILE__) . '/widgethook.php');
 require_once (dirname(__FILE__) . '/contenthook.php');
 require_once (dirname(__FILE__) . '/ads.php');
 require_once (dirname(__FILE__) . '/adsadvanced.php');
+require_once (dirname(__FILE__) . '/pages.php');
 require_once (dirname(__FILE__) . '/privacypolicy.php');
 require_once (dirname(__FILE__) . '/feeds.php');
 ?>
