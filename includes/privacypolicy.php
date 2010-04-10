@@ -90,7 +90,7 @@ function wp_insert_edit_privacy_policy_HTML() { ?>
 <textarea id="wp_insert_privacy_policy_content" name="wp_insert_privacy_policy_content" style="width:100%; height: 400px;">
 <?php echo get_option('wp_insert_privacy_policy_content'); ?>
 </textarea>
-<p><a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=Manage Privacy Policy&reset=1"; ?>" class="button-secondary alignright">Reset</a></p><p><small>This is an automatically generated Privacy Policy.</small></p>
+<p><a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=Manage Privacy Policy&reset=1"; ?>" class="button-secondary alignright">Reset</a></p><p><small>This is an automatically generated "Privacy Policy".</small></p>
 <script type="text/javascript">
 	if(document.getElementById('wp_insert_privacy_policy_content')) {
 	var wp_insert_fckeditor = new FCKeditor('wp_insert_privacy_policy_content') ;

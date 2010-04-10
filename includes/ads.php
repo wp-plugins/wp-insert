@@ -7,6 +7,7 @@ function smart_add_menu() {
 	add_submenu_page(__FILE__, 'wp-insert', 'Manage Ads<br/>(Posts and Sidebars)', 8, __FILE__, 'wp_insert_add_adspage');
 	add_submenu_page(__FILE__, 'wp-insert', 'Manage Ads<br/>(Template Tags)', 8, 'Manage Ads Advanced', 'wp_insert_add_advanced_spage');
 	add_submenu_page(__FILE__, 'wp-insert', 'Manage Privacy Policy', 8, 'Manage Privacy Policy', 'wp_insert_privacy_policy_page');
+	add_submenu_page(__FILE__, 'wp-insert', 'Manage Terms', 8, 'Terms And Conditions', 'wp_insert_terms_conditions_page');
 	add_submenu_page(__FILE__, 'wp-insert', 'Manage Pages', 8, 'Manage Pages', 'wp_insert_pages_page');
 	add_submenu_page(__FILE__, 'wp-insert', 'Manage Feeds', 8, 'Manage Feeds', 'smart_add_feedspage');
 	add_submenu_page(__FILE__, 'wp-insert', 'Tracking Codes', 8, 'Tracking Codes', 'smart_add_analytics');

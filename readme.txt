@@ -1,10 +1,10 @@
 === Wp-Insert ===
 Contributors: Namith Jawahar 
 Donate link:http://www.wp-insert.smartlogix.co.in/
-Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized
+Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized,terms and conditions,terms,conditions,automatic terms and conditions
 Requires at least: 2.7
-Tested up to: 2.9
-Stable tag: 1.6.1
+Tested up to: 2.9.2
+Stable tag: 1.6.2
 
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
@@ -51,6 +51,13 @@ Manage Ads (Completely Rewritten with a New and Powerful Interface)
 *   Create a Privacy policy page without even typing a Word.
 *   Assign Privacy Policy to an existing page or create one automatically.
 *	WYSIWYG Editor to finetune the Privacy Policy to your requirements.
+
+**Manage Terms and Conditions**
+
+*   Readymade general Terms and Conditions for your site.
+*   Create a Terms and Conditions page without even typing a Word.
+*   Assign Terms and Conditions to an existing page or create one automatically.
+*	WYSIWYG Editor to finetune the Terms and Conditions to your requirements.
 
 **Manage Pages**
 
@@ -102,7 +109,8 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 6. Wp-Insert - Syntax Highlighting.
 7. Wp-Insert - Adding an in post Ad.
 8. Wp-Insert - Managing Privacy policy.
-9. Wp-Insert - Reordering pages.
+9. Wp-Insert - Managing Terms and Conditions.
+10. Wp-Insert - Reordering pages.
 
 
 == Frequently Asked Questions ==

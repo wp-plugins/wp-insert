@@ -133,5 +133,6 @@ require_once (dirname(__FILE__) . '/ads.php');
 require_once (dirname(__FILE__) . '/adsadvanced.php');
 require_once (dirname(__FILE__) . '/pages.php');
 require_once (dirname(__FILE__) . '/privacypolicy.php');
+require_once (dirname(__FILE__) . '/tandc.php');
 require_once (dirname(__FILE__) . '/feeds.php');
 ?>
