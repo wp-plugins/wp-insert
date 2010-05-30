@@ -22,7 +22,7 @@ function wp_insert_privacy_policy_page() {
 		$my_post['ID'] = $_GET["assign"];
 		$my_post['post_content'] = '[Privacy]';
 		wp_update_post($my_post);
-		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=Manage Privacy Policy");
+		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=manage-privacy-policy");
 	}
 	else if(isset($_GET["create"])) {
 		$my_post = array();
@@ -32,7 +32,7 @@ function wp_insert_privacy_policy_page() {
 		$my_post['post_author'] = 1;
 		$my_post['post_type'] = 'page';
 		wp_insert_post($my_post);
-		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=Manage Privacy Policy");
+		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=manage-privacy-policy");
 	}
 	else if(isset($_GET["reset"])) {
 		$Domain = str_replace('', "www.", $_SERVER['HTTP_HOST']);
@@ -46,7 +46,7 @@ function wp_insert_privacy_policy_page() {
 		<p>If you wish to disable cookies, you may do so through your individual browser options. More detailed information about cookie management with specific web browsers can be found at the browsers\' respective websites.</p>';
 
 		update_option("wp_insert_privacy_policy_content", $PrivacyPolicyText);
-		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=Manage Privacy Policy");
+		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=manage-privacy-policy");
 	}
 	global $screen_layout_columns;
 
@@ -54,7 +54,7 @@ function wp_insert_privacy_policy_page() {
 	add_meta_box('wp_insert_edit_assign_privacy_policy_page', 'Assign Page for Privacy Policy', 'wp_insert_edit_assign_privacy_policy_page_HTML', 'col_1');
 
 	$parameters = 'wp_insert_privacy_policy_content';
-	wp_insert_settings_page_layout($parameters, 'WP-INSERT : Manage Privacy Policy', 'privacy');
+	wp_insert_settings_page_layout($parameters, 'WP-INSERT : manage-privacy-policy', 'privacy');
 }
 
 function wp_insert_edit_assign_privacy_policy_page_HTML() { ?>
@@ -67,7 +67,7 @@ $count = 0;
 $pages = get_pages('sort_column=menu_order');
 foreach($pages as $page) {
 	if($count < 100) {
-		echo "<option value='".get_bloginfo('url')."/wp-admin/admin.php?page=Manage Privacy Policy&assign=".$page->ID."'>".$page->post_title."</option>";
+		echo "<option value='".get_bloginfo('url')."/wp-admin/admin.php?page=manage-privacy-policy&assign=".$page->ID."'>".$page->post_title."</option>";
 	}
 	$count++;
 }
@@ -81,7 +81,7 @@ document.getElementById('wp_insert_assign_now_link').href = document.getElementB
 </script>
 as Privacy Policy page : <a id="wp_insert_assign_now_link" href="#" class="button-secondary">Assign Now</a></p>
 <p><b>OR</b></p>
-<p>Create Privacy Policy Page Automatically : <a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=Manage Privacy Policy&create=1"; ?>" class="button-secondary">Create Now</a></p>
+<p>Create Privacy Policy Page Automatically : <a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=manage-privacy-policy&create=1"; ?>" class="button-secondary">Create Now</a></p>
 </div>
 <?php }
 
@@ -90,7 +90,7 @@ function wp_insert_edit_privacy_policy_HTML() { ?>
 <textarea id="wp_insert_privacy_policy_content" name="wp_insert_privacy_policy_content" style="width:100%; height: 400px;">
 <?php echo get_option('wp_insert_privacy_policy_content'); ?>
 </textarea>
-<p><a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=Manage Privacy Policy&reset=1"; ?>" class="button-secondary alignright">Reset</a></p><p><small>This is an automatically generated "Privacy Policy".</small></p>
+<p><a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=manage-privacy-policy&reset=1"; ?>" class="button-secondary alignright">Reset</a></p><p><small>This is an automatically generated "Privacy Policy".</small></p>
 <script type="text/javascript">
 	if(document.getElementById('wp_insert_privacy_policy_content')) {
 	var wp_insert_fckeditor = new FCKeditor('wp_insert_privacy_policy_content') ;

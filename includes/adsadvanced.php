@@ -1,7 +1,7 @@
 <?php
 require_once (dirname(__FILE__) . '/templateads.php');
 
-function wp_insert_add_advanced_spage() {
+function wp_insert_add_advanced_page() {
 	global $screen_layout_columns;
 
 	add_meta_box('wp_insert_multiple_ad_network', 'Multiple Ad Networks', 'wp_insert_multiple_ad_network_HTML', 'col_1');

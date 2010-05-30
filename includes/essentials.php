@@ -14,8 +14,6 @@ if ( ! defined( 'WP_PLUGIN_URL' ) )
       define( 'WP_PLUGIN_URL', WP_CONTENT_URL. '/plugins' );
 if ( ! defined( 'WP_PLUGIN_DIR' ) )
       define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
-      
-add_action('admin_menu', 'smart_add_menu');
 
 function screen_layout_columns($columns, $screen) {
 $columns[$screen] = 2;
@@ -126,13 +124,16 @@ require_once (dirname(__FILE__) . '/postpicker.php');
 </div>
 <?php }
 
+require_once (dirname(__FILE__) . '/menu.php');
 
 require_once (dirname(__FILE__) . '/widgethook.php');
 require_once (dirname(__FILE__) . '/contenthook.php');
 require_once (dirname(__FILE__) . '/ads.php');
 require_once (dirname(__FILE__) . '/adsadvanced.php');
 require_once (dirname(__FILE__) . '/pages.php');
+require_once (dirname(__FILE__) . '/syntax-highlighter.php');
 require_once (dirname(__FILE__) . '/privacypolicy.php');
 require_once (dirname(__FILE__) . '/tandc.php');
 require_once (dirname(__FILE__) . '/feeds.php');
+
 ?>

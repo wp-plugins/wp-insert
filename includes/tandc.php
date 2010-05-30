@@ -26,7 +26,7 @@ function wp_insert_terms_conditions_page() {
 		$my_post['ID'] = $_GET["assign"];
 		$my_post['post_content'] = '[Terms]';
 		wp_update_post($my_post);
-		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=Terms And Conditions");
+		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=manage-terms-and-conditions");
 	}
 	else if(isset($_GET["create"])) {
 		$my_post = array();
@@ -36,7 +36,7 @@ function wp_insert_terms_conditions_page() {
 		$my_post['post_author'] = 1;
 		$my_post['post_type'] = 'page';
 		wp_insert_post($my_post);
-		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=Terms And Conditions");
+		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=manage-terms-and-conditions");
 	}
 	else if(isset($_GET["reset"])) {
 		$Domain = str_replace('', "www.", $_SERVER['HTTP_HOST']);
@@ -54,15 +54,15 @@ The use of this website is subject to the following terms of use:
 <li>You may not create a link to this website from another website or document without '.$Domain.'\'s prior written consent.</li></ul></p>';
 
 		update_option("wp_insert_terms_conditions_content", $TermsandConditionsText);
-		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=Terms And Conditions");
+		header("Location: ".get_bloginfo('url')."/wp-admin/admin.php?page=manage-terms-and-conditions");
 	}
 	global $screen_layout_columns;
 
 	add_meta_box('wp_insert_edit_terms_conditions', 'Finetune your Terms and Conditions', 'wp_insert_edit_terms_conditions_HTML', 'col_1');
-	add_meta_box('wp_insert_edit_assign_terms_conditions_page', 'Assign Page for Terms And Conditions', 'wp_insert_edit_assign_terms_conditions_page_HTML', 'col_1');
+	add_meta_box('wp_insert_edit_assign_terms_conditions_page', 'Assign Page for manage-terms-and-conditions', 'wp_insert_edit_assign_terms_conditions_page_HTML', 'col_1');
 
 	$parameters = 'wp_insert_terms_conditions_content';
-	wp_insert_settings_page_layout($parameters, 'WP-INSERT : Terms And Conditions', 'terms');
+	wp_insert_settings_page_layout($parameters, 'WP-INSERT : manage-terms-and-conditions', 'terms');
 }
 
 function wp_insert_edit_assign_terms_conditions_page_HTML() { ?>
@@ -75,7 +75,7 @@ $count = 0;
 $pages = get_pages('sort_column=menu_order');
 foreach($pages as $page) {
 	if($count < 100) {
-		echo "<option value='".get_bloginfo('url')."/wp-admin/admin.php?page=Terms And Conditions&assign=".$page->ID."'>".$page->post_title."</option>";
+		echo "<option value='".get_bloginfo('url')."/wp-admin/admin.php?page=manage-terms-and-conditions&assign=".$page->ID."'>".$page->post_title."</option>";
 	}
 	$count++;
 }
@@ -89,7 +89,7 @@ document.getElementById('wp_insert_assign_now_link').href = document.getElementB
 </script>
 as Terms and Conditions page : <a id="wp_insert_assign_now_link" href="#" class="button-secondary">Assign Now</a></p>
 <p><b>OR</b></p>
-<p>Create Terms and Conditions Page Automatically : <a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=Terms And Conditions&create=1"; ?>" class="button-secondary">Create Now</a></p>
+<p>Create Terms and Conditions Page Automatically : <a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=manage-terms-and-conditions&create=1"; ?>" class="button-secondary">Create Now</a></p>
 </div>
 <?php }
 
@@ -98,7 +98,7 @@ function wp_insert_edit_terms_conditions_HTML() { ?>
 <textarea id="wp_insert_terms_conditions_content" name="wp_insert_terms_conditions_content" style="width:100%; height: 400px;">
 <?php echo get_option('wp_insert_terms_conditions_content'); ?>
 </textarea>
-<p><a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=Terms And Conditions&reset=1"; ?>" class="button-secondary alignright">Reset</a></p><p><small>This is an automatically generated "Terms and Conditions".</small></p>
+<p><a href="<?php echo get_bloginfo('url')."/wp-admin/admin.php?page=manage-terms-and-conditions&reset=1"; ?>" class="button-secondary alignright">Reset</a></p><p><small>This is an automatically generated "Terms and Conditions".</small></p>
 <script type="text/javascript">
 	if(document.getElementById('wp_insert_terms_conditions_content')) {
 	var wp_insert_fckeditor = new FCKeditor('wp_insert_terms_conditions_content') ;
