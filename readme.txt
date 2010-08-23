@@ -90,9 +90,9 @@ All from within a well contained and easy to use interface.
 *   Syntax Highlighting for Code snippets in posts and pages
 *   Syntax Highlighting for Code in post and pages using shortcodes and custom fields.
 
-**Miscellaneus Options**
+**Miscellaneous Options**
 
-*   Several miscellaneus Options
+*   Several miscellaneous Options
 
 All these features in an easy to use and novice user friendly interface which can still cater to the geekiest of webmasters.
 
