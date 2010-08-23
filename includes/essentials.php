@@ -135,5 +135,6 @@ require_once (dirname(__FILE__) . '/syntax-highlighter.php');
 require_once (dirname(__FILE__) . '/privacypolicy.php');
 require_once (dirname(__FILE__) . '/tandc.php');
 require_once (dirname(__FILE__) . '/feeds.php');
-
+require_once (dirname(__FILE__) . '/miscellaneous.php');
+require_once (dirname(__FILE__) . '/dashboardwidget.php');
 ?>

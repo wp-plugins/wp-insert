@@ -50,7 +50,12 @@ function wp_insert_add_menu() {
 						'Title' => 'WYSIWYG Editor',
 						'Handle' => 'manage-wysiwyg-editing',
 						'Function' => 'smart_add_wysiwyg_pages'
-					)
+					),
+					'miscellaneous' => array(
+						'Title' => 'Miscellaneous',
+						'Handle' => 'miscellaneous_options',
+						'Function' => 'wp_insert_miscellaneous_pages'
+					),
 				);
 				
 	foreach($subMenuItems as $subMenuItem) {

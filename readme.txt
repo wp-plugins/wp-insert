@@ -3,8 +3,8 @@ Contributors: Namith Jawahar
 Donate link:http://www.wp-insert.smartlogix.co.in/
 Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized,terms and conditions,terms,conditions,automatic terms and conditions
 Requires at least: 2.7
-Tested up to: 3.0
-Stable tag: 1.7.1
+Tested up to: 3.0.1
+Stable tag: 1.7.2
 
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
@@ -15,9 +15,8 @@ Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin
 Wp-Insert can manage your feeds, google analytics, blog editing and even make editing your themes easier for you.  
 All from within a well contained and easy to use interface.  
 **Features**  
-Manage Ads (Completely Rewritten with a New and Powerful Interface)  
-**Multiple Ad Network Support.** (You can now run any ad-network along with adsense or any other network)  
-(Give the New Ad Manager a try)  
+**Manage Ads**
+*Multiple Ad Network Support.* (You can now run any ad-network along with adsense or any other network)
     *In post ads - Allows you to insert your ads around and inside your content*
 
 *   Allows copy/past of html, adsense and other ads code
@@ -88,8 +87,12 @@ Manage Ads (Completely Rewritten with a New and Powerful Interface)
 *   Syntax HighLighting for theme editor
 *   Syntax Highlighting for plugin editor
 *   Different highlighting for different file types
-*	Syntax Highlighting for Code snippets in posts and pages
-*	Syntax Highlighting for Code in post and pages using shortcodes and custom fields.
+*   Syntax Highlighting for Code snippets in posts and pages
+*   Syntax Highlighting for Code in post and pages using shortcodes and custom fields.
+
+**Miscellaneus Options**
+
+*   Several miscellaneus Options
 
 All these features in an easy to use and novice user friendly interface which can still cater to the geekiest of webmasters.
 

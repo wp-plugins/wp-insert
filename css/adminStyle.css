@@ -82,3 +82,7 @@ background-color: #efefef;
 margin-right: 20px;
 cursor: move;
 }
+
+.column-postID {
+	width: 3em;
+}
