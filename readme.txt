@@ -4,7 +4,7 @@ Donate link:http://www.wp-insert.smartlogix.co.in/
 Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized,terms and conditions,terms,conditions,automatic terms and conditions
 Requires at least: 2.7
 Tested up to: 3.0.1
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
@@ -123,4 +123,5 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 <a href="http://www.wp-insert.smartlogix.co.in/" target="_self" title="Wp-Insert Tutorial and Support Website">Wp-Insert Tutorial and Support Website</a>  
 <a href="http://www.smartlogix.co.in/" target="_self" title="Wp-Insert Developers">Wp-Insert Developers</a>
 == Changelog ==
+1.7.3 : This is a bugfix release which takes care of two issues causing the blank manage ads pages in some blogs.
 <a href="http://www.wp-insert.smartlogix.co.in/" target="_self" title="Wp-Insert Tutorial and Support Website">Wp-Insert Tutorial and Support Website</a>

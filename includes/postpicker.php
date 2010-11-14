@@ -228,19 +228,20 @@ function ShowPostPicker(sender) {
 
 	<?php 
 	$count = 0;
-	$pages = get_pages('sort_column=menu_order');
-	$posts = get_posts('numberposts=-1&sort_column=desc');
+	//Change 100 below to a bigger number if you want to show more posts/pages in the post picker. May cause the server to run out of memory if number of posts/pages is to high.
+	$pages = get_pages('numberposts=100&sort_column=menu_order');
+	$posts = get_posts('numberposts=100&sort_column=desc');
 	$allposts = "<select multiple name='fromBox' id='fromBox'>";
 	$selectedposts = "<select multiple name='toBox' id='toBox'></select>";
 	foreach($pages as $page) {
 		if($count < 100) {
-			$allposts .= "<option value='".$page->ID."'>".$page->post_title."</option>";
+			$allposts .= "<option value='".$page->ID."'>".htmlspecialchars($page->post_title)."</option>";
 		}
 		$count++;
 	}
 	foreach($posts as $post) {
 		if($count < 100) {
-			$allposts .= "<option value='".$post->ID."'>".$post->post_title."</option>";
+			$allposts .= "<option value='".$post->ID."'>".htmlspecialchars($post->post_title)."</option>";
 		}
 		$count++;
 	}
