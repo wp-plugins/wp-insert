@@ -4,7 +4,8 @@ add_action('admin_menu', 'wp_insert_add_menu');
 function wp_insert_add_menu() {
 	$handle = 'wp-insert';
 	add_menu_page(__('Wp-Insert','wp-insert'), __('Wp-Insert','wp-insert'), 'manage_options', $handle, 'wp_insert_add_adspage');
-	
+   add_action( 'admin_print_styles-' . $handle, 'wp_insert_admin_styles' );
+   
 	$subMenuItems = array(
 					'AdsInContent' => array(
 						'Title' => 'Manage Ads<br/>(Posts and Sidebars)',

@@ -18,7 +18,7 @@ foreach($pages as $page) { ?>
 			<img src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/images/move-16x16.png" width="16px" height="16px" alt="move" class="handle" /> 
 			<strong>
 				<?php if($page->post_parent != 0) { echo get_the_title($page->post_parent)."&nbsp;&raquo;&nbsp;".$page->post_title; } else { echo $page->post_title; } ?>
-			</strong></a> 
+			</strong>
 		<?php 
 			/*$temp = '';
 			foreach($pages as $subPage) {

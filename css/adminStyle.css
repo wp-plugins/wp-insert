@@ -1,14 +1,8 @@
-/*Begin Make default admin menu wider*/
-#adminmenu {
-width:175px;
-margin:15px 5px 15px -190px;
+.wp-insert-submit {
+	text-align: center;
 }
 
-#wpbody {
-margin-left:205px;
-}
-
-#submit {
+.wp-insert-submit #submit {
 	background: green none repeat scroll 0% 0% !important;
 	height: 60px;
 	font-weight: bold;
@@ -27,10 +21,6 @@ margin-left:205px;
 .bigbold {
 	font-size: 11px;
 	font-weight: bold;
-}
-
-.wp-insert-submit {
-	text-align: center;
 }
 
 .GreyOutLayer
@@ -61,7 +51,6 @@ margin-left:205px;
 #popUpMaster h4{position:absolute;top:0;left:0;z-index:10;padding:0;margin:6px 0 0 10px;color:#333333;text-shadow:0 1px 0 #FFFFFF;
 	font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:15px;cursor:move;background:nonImage.gif;
 	width:100%}
-/*End Make default admin menu wider*/
 
 .multipleSelectBoxControl div select option {
 	font-size: 10px;

@@ -3,12 +3,13 @@ Contributors: Namith Jawahar
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7834514
 Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized,terms and conditions,terms,conditions,automatic terms and conditions
 Requires at least: 2.7
-Tested up to: 3.0.2
-Stable tag: 1.7.3
+Tested up to: 3.2
+Stable tag: 1.7.4
 
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
 == Description ==
+PS : You must upgrade from Wp-Insert 1.7.3 to a 1.7.4 before upgrading to Wordpress 3.2+ or you will lose your Admin menu.  In case you have upgraded Wordpress already, upgrading Wp-Insert via FTP will fix the issue.
 
 **WP-INSERT by <a href="http://www.smartlogix.co.in/" target="_self" title="Smart Logix">Smart Logix</a> : The ultimate wordpress plugin**  
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.  

@@ -16,21 +16,21 @@ if ( ! defined( 'WP_PLUGIN_DIR' ) )
       define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
 
 function screen_layout_columns($columns, $screen) {
-$columns[$screen] = 2;
-return $columns;
+	$columns[$screen] = 2;
+	return $columns;
 }
 
-/*add_filter('screen_layout_columns', array(&$this, 'on_screen_layout_columns'), 10, 2);
-//for WordPress 2.8 we have to tell, that we support 2 columns !
-function on_screen_layout_columns($columns, $screen) {
-	if ($screen == $this->pagehook) {
-		$columns[$this->pagehook] = 2;
-	}
-	return $columns;
-}*/
+add_action( 'admin_init', 'wp_insert_admin_init' );
+function wp_insert_admin_init() {
+   wp_register_style('WpInsertAdminCSS', WP_PLUGIN_URL.'/wp-insert/css/adminStyle.css');
+}
+
+function wp_insert_admin_styles() {
+   wp_enqueue_style('WpInsertAdminCSS');
+}
 
 function wp_insert_admin_register_head() {
-	echo "<link rel='stylesheet' type='text/css' href='".WP_PLUGIN_URL.'/wp-insert/css/adminStyle.css'."' /><!--[if IE 6]><link rel='stylesheet' type='text/css' href='".WP_PLUGIN_URL.'/wp-insert/css/IE6adminStyle.css'."' /><![endif]-->\n";
+	echo "<link rel='stylesheet' type='text/css' href='".WP_PLUGIN_URL.'/wp-insert/css/adminStyle.css'."' />";
 }
 add_action('admin_head', 'wp_insert_admin_register_head');
 
@@ -68,48 +68,48 @@ switch(get_option('wp_insert_multiple_ad_network_type')) {
 
 function wp_insert_settings_page_layout($page_parameters, $page_title, $page_type) { ?>
 <div id="post_ads_container" class="wrap">
-<?php screen_icon('options-general'); ?>
-<h2><?php echo $page_title; ?></h2>
-<div class="updated fade below-h2" id="message" style="opacity:0;display:none;"><p>Changes have been made to this page.  Please click <b>Save Changes</b> to make them permanent</p></div>
-<?php show_support_options(); ?>
-<form method="post" action="options.php">
-<?php
-wp_nonce_field('update-options');
-wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
-wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
-?>
-<?php if($page_type == 'pages') { ?>
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery-ui-1.7.1.custom.min.js"></script>
-<?php } ?>
-<?php if($page_type == 'ads') { ?>
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.core.js"></script>
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/ui.draggable.js"></script>
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery.corner.js"></script>
-<?php 
-require_once (dirname(__FILE__) . '/postpicker.php');
-} ?>
-<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/common.js"></script>
-			<div id="poststuff" class="metabox-holder has-right-sidebar">
-				<div id="side-info-column" class="inner-sidebar">
-				<p style="text-align:center;">
-					<script type="text/javascript" src="http://www.wp-insert.smartlogix.co.in/wp-content/plugins/wp-adnetwork/wp-adnetwork.php?showad=1"></script>
-				</p>
-				<?php do_meta_boxes('col_2','advanced',null); ?>
-				<p class="submit wp-insert-submit">
-					<input type="hidden" name="action" value="update" />
-					<input type="hidden" name="page_options" value="<?php echo $page_parameters; ?>" />
-					<input type="submit" id="submit" class="button-primary button-wp-insert" value="<?php _e('Save Changes') ?>" />
-				</p>
+	<?php screen_icon('options-general'); ?>
+	<h2><?php echo $page_title; ?></h2>
+	<div class="updated fade below-h2" id="message" style="opacity:0;display:none;">
+		<p>Changes have been made to this page.  Please click <b>Save Changes</b> to make them permanent</p>
+	</div>
+	<?php show_support_options(); ?>
+	<form method="post" action="options.php">
+		<?php
+		wp_nonce_field('update-options');
+		wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
+		wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
+		?>
+		<?php if($page_type == 'pages') { ?>
+		<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery-ui-1.8.14.custom.min.js"></script>
+		<?php } ?>
+		<?php if($page_type == 'ads') { ?>
+		<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery-ui-1.8.14.custom.min.js"></script>
+		<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/jquery/jquery.corner.js"></script>
+		<?php 
+		require_once (dirname(__FILE__) . '/postpicker.php');
+		} ?>
+		<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/wp-insert/js/common.js"></script>
+		<div id="poststuff" class="metabox-holder has-right-sidebar">
+			<div id="side-info-column" class="inner-sidebar">
+			<p style="text-align:center;">
+				<script type="text/javascript" src="http://www.wp-insert.smartlogix.co.in/wp-content/plugins/wp-adnetwork/wp-adnetwork.php?showad=1"></script>
+			</p>
+			<?php do_meta_boxes('col_2','advanced',null); ?>
+			<p class="submit wp-insert-submit">
+				<input type="hidden" name="action" value="update" />
+				<input type="hidden" name="page_options" value="<?php echo $page_parameters; ?>" />
+				<input type="submit" id="submit" class="button-primary button-wp-insert" value="<?php _e('Save Changes') ?>" />
+			</p>
+			</div>
+			<div id="post-body" class="has-sidebar">				
+				<div id="post-body-content" class="has-sidebar-content">
+					<?php do_meta_boxes('col_1','advanced',null); ?>
 				</div>
-				<div id="post-body" class="has-sidebar">				
-					<div id="post-body-content" class="has-sidebar-content">
-						<?php do_meta_boxes('col_1','advanced',null); ?>
-					</div>
-				</div>
-				<br class="clear"/>			
-			</div>	
-		</form>
-		</div>
+			</div>
+			<br class="clear"/>			
+		</div>	
+	</form>
 	<script type="text/javascript">
 		//<![CDATA[
 		jQuery(document).ready( function($) {
