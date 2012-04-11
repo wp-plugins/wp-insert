@@ -47,11 +47,6 @@ function wp_insert_add_menu() {
 						'Handle' => 'manage-tracking-codes',
 						'Function' => 'smart_add_analytics'
 					),
-					'WYSIWYGEditor' => array(
-						'Title' => 'WYSIWYG Editor',
-						'Handle' => 'manage-wysiwyg-editing',
-						'Function' => 'smart_add_wysiwyg_pages'
-					),
 					'miscellaneous' => array(
 						'Title' => 'Miscellaneous',
 						'Handle' => 'miscellaneous_options',
