@@ -9,7 +9,6 @@ Stable tag: 1.7.6
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
 == Description ==
-PS : You must upgrade from Wp-Insert 1.7.3 to a 1.7.4 before upgrading to Wordpress 3.2+ or you will lose your Admin menu.  In case you have upgraded Wordpress already, upgrading Wp-Insert via FTP will fix the issue.
 
 **WP-INSERT by <a href="http://www.smartlogix.co.in/" target="_self" title="Smart Logix">Smart Logix</a> : The ultimate wordpress plugin**  
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.  
