@@ -1,127 +1,98 @@
 === Wp-Insert ===
 Contributors: Namith Jawahar 
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7834514
-Tags: adsense,google,widget,post,admin,plugin,rss,feedburner,ads,subscribe,fck editor,category description editor,excerpt,WYSIWYG,WYSIWYG editor,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized,terms and conditions,terms,conditions,automatic terms and conditions
-Requires at least: 3.0
-Tested up to: 3.3.1
-Stable tag: 1.7.6
+Donate link:www.wp-insert.smartlogix.co.in/donate
+Tags: google adsense,adsense,ads,advertising,best ad man
+Requires at least: 3.2
+Tested up to: 3.4.2
+Stable tag: 2.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
+Wp-Insert is the most powerful yet easiest to use WordPress ad management plugin which does a lot more than ad management.
 
 == Description ==
 
-**WP-INSERT by <a href="http://www.smartlogix.co.in/" target="_self" title="Smart Logix">Smart Logix</a> : The ultimate wordpress plugin**  
-Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.  
-Wp-Insert can manage your feeds, google analytics, blog editing and even make editing your themes easier for you.  
-All from within a well contained and easy to use interface.  
-**Features**  
+**WP-INSERT by <a href=\"http://www.smartlogix.co.in/\" title=\"Smart Logix\">Smart Logix</a> : The ultimate wordpress plugin**
+
+Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
+
+Wp-Insert can manage your ads, google analytics or any other tracking scripts, legal stuff land even make editing your themes or writing code in content easier for you.
+
+All these from within a well contained and easy to use interface.  
+  
 **Manage Ads**
-*Multiple Ad Network Support.* (You can now run any ad-network along with adsense or any other network)
-    *In post ads - Allows you to insert your ads around and inside your content*
 
-*   Allows copy/past of html, adsense and other ads code
-*   Insert Ads above the content 
-*   Insert Ads below the content 
-*   Insert Ads in the middle of the content (Automatically adjusts to the length of content eliminating ads on short posts)
-*   Insert Ads to the left of the post 
-*   Insert ads to the right of the post 
-*   Option to show/hide ads on Home Page
-*   Option to show/hide ads on Archive/Category/Tag Pages
-*   Option to fiter ads from specified posts/pages (With Popup picker for selecting the posts / pages)
-*   Option to control each and every ad
+*Multiple Ad Network Support :* You can now run any ad-network along with adsense or any other network without infringing with the terms of one another.  The plugin supports upto 3 different ad network simultaneously. Run Adsense ads along with yahoo, Adbrite, Chitika or any other ad network without interfering with the terms of each network.
 
-    *10 ad widgets at your disposal*
+*In Post ads :* Allows you to insert your ads around and inside your content.
 
-*   Go to the widgets page under "Appearance" and place the widgets onto the sidebars you want the ads to appear onto 
-*   Option to style the Ads 
-*   Support for upto three different Ad networks all delivering at the same time
+*   Insert Ads above the content.
+*   Insert Ads below the content.
+*   Insert Ads in the middle of the content. (Option to control the minimum length required for an articles in which middle ads show up as well as option to exactly define where the middle ads appears in a post)
+*   Insert Ads to the left of the content.
+*   Insert Ads to the right of the content.
+*   Extensive and elaborate RULES section to control when and where you display the ads. (Precise control down to single post/page level)
+*   Geo Targeting : Pick different ads for different Geographical locations. (You might want to promote an affiliate product for visitors from USA while showing Google Adsense to Rest of the World)
 
-    *20 custom ad areas compatible with all themes.*
+  
+*Widget Ads :* 20 ad widgets at your disposal with elaborate setting to when, where and how to display them.
 
-*   Now insert Ads anywhere on your site.
-*   Indivigually control each ads.
-*   Try different ad sizes and positions easily.
+*Template Ads :* Now insert Ads anywhere on your site by placing them directly within the theme code while still allowing users to control them from the Dashboard.
 
-    Run adsense ads along with yahoo, adbrite, chitika or any other ad network without interfering with the terms of each network.
-    
-**Manage Privacy Policy**
 
-*   Readymade Adsense Compatible privacy policy for your site.
-*   Create a Privacy policy page without even typing a Word.
-*   Assign Privacy Policy to an existing page or create one automatically.
-*	WYSIWYG Editor to finetune the Privacy Policy to your requirements.
+**Manage Legal Pages**  
+  
+*One Click Privacy Policy for your Wordpress Site :* Customizable Ready made Adsense Compatible privacy policy for your site which you can add to any existing page with one click.
 
-**Manage Terms and Conditions**
+*One Click Terms and Conditions for your Wordpress Site :* Customizable Ready made general Terms and Conditions for your site which you can add to any existing page with one click.
 
-*   Readymade general Terms and Conditions for your site.
-*   Create a Terms and Conditions page without even typing a Word.
-*   Assign Terms and Conditions to an existing page or create one automatically.
-*	WYSIWYG Editor to finetune the Terms and Conditions to your requirements.
-
-**Manage Pages**
-
-*   Reorder Pages using a drag and drop interface.
-
-**Manage Feeds**
-
-*   Your logo in your feeds
-*   Insert Ads into feeds
-*   Link your feeds to feedburner (Experimental)
-*   Subscribe via Email widge 
-*   Subscribe to feed widget
+*Disclaimer and Copyright Notices :* Add Disclaimer and Copyright Notices to your site in one click.
 
 **Manage Tracking Codes**
 
 *   Insert Google Analytics tracking onto all you blog pages instantly
-*   Paste other tracking code into the header or footer of your blog
-
-**Manage WYSIWYG editing**
-
-*   Replace TINY MCE with FCK EDITOR  
-*   Disable auto formatting done by wordpress (Stops the annoying autoformatting done by wordpress. You can now write your posts as you intented to write it. Also allows you to paste in javascript etc easily into your posts/pages)
-*   WYSIWYG Category description Editor
-*   WYSIWYG Excerpt Editor
+*   Paste any other tracking code into the header or footer of your blog
 
 **Syntax Highlighting**
 
-*   Syntax HighLighting for theme editor
+*   Syntax Highlighting for theme editor
 *   Syntax Highlighting for plugin editor
 *   Different highlighting for different file types
 *   Syntax Highlighting for Code snippets in posts and pages
 *   Syntax Highlighting for Code in post and pages using shortcodes and custom fields.
 
-**Miscellaneous Options**
-
-*   Several miscellaneous Options
-
 All these features in an easy to use and novice user friendly interface which can still cater to the geekiest of webmasters.
-
- 
 
 == Installation ==
 
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
-
-
-
-== Screenshots ==
-
-1. Wp-Insert - Managing Ads (Auto insertion).
-2. Wp-Insert - Managing Ads using Template tags.
-3. Wp-Insert - Managing Feeds
-4. Wp-Insert - Managing Tracking Codes.
-5. Wp-Insert - Managing WYSIWYG editing.
-6. Wp-Insert - Syntax Highlighting.
-7. Wp-Insert - Adding an in post Ad.
-8. Wp-Insert - Managing Privacy policy.
-9. Wp-Insert - Managing Terms and Conditions.
-10. Wp-Insert - Reordering pages.
-
-
 == Frequently Asked Questions ==
 
-<a href="http://www.wp-insert.smartlogix.co.in/" target="_self" title="Wp-Insert Tutorial and Support Website">Wp-Insert Tutorial and Support Website</a>  
-<a href="http://www.smartlogix.co.in/" target="_self" title="Wp-Insert Developers">Wp-Insert Developers</a>
-== Changelog ==
-1.7.3 : This is a bugfix release which takes care of two issues causing the blank manage ads pages in some blogs.
-<a href="http://www.wp-insert.smartlogix.co.in/" target="_self" title="Wp-Insert Tutorial and Support Website">Wp-Insert Tutorial and Support Website</a>
+<a href=\"http://www.wp-insert.smartlogix.co.in/\" title=\"Wp-Insert Tutorial and Support Website\">Wp-Insert Tutorial and Support Website</a>
+ 
+<a href=\"http://www.smartlogix.co.in/\" title=\"Wp-Insert Developers\">Wp-Insert Developers</a>
+== Screenshots ==
+1. Multiple Ad Network Support
+
+2. Elaborate Rules System for precise control over Ads
+
+3. Rules system popup for controlling ads on Posts
+
+4. Rules system popup for controlling ads on Pages
+
+5. Geo Targeting : Show differnet ads for visitors from different locations
+
+6. Geo Targeting : Popup showing the targetable areas
+
+7. Customizable Ready made Adsense Compatible privacy policy
+
+8. Different Legal Page Templates
+
+9. Easy to manage analiytics or any other tracking codes
+
+10. Syntax Highlighting
+== Upgrade Notice ==
+
+= 2.0 =
+Users of old versions of Wp-Insert will lose your widget placements when upgrading to 2.0 as we have finally switched to the new widget API.
+Wp-Insert is now upto 4 times more efficient and have extremely high emphasis on security compared to previous versions.
