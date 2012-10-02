@@ -1,6 +1,6 @@
 === Wp-Insert ===
 Contributors: Namith Jawahar 
-Donate link:www.wp-insert.smartlogix.co.in/donate
+Donate link:www.wp-insert.smartlogix.co.in/support
 Tags: google adsense,adsense,ads,advertising,best ad man
 Requires at least: 3.2
 Tested up to: 3.4.2
