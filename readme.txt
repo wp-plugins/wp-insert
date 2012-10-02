@@ -1,7 +1,7 @@
 === Wp-Insert ===
 Contributors: Namith Jawahar 
 Donate link:www.wp-insert.smartlogix.co.in/support
-Tags: google adsense,adsense,ads,advertising,best ad man
+Tags: adsense,google,widget,post,admin,plugin,ads,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized,terms and conditions,terms,conditions,automatic terms and conditions
 Requires at least: 3.2
 Tested up to: 3.4.2
 Stable tag: 2.0
