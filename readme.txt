@@ -16,7 +16,7 @@ Wp-Insert is the most powerful yet easiest to use WordPress ad management plugin
 
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
-Wp-Insert can manage your ads, google analytics or any other tracking scripts, legal stuff land even make editing your themes or writing code in content easier for you.
+Wp-Insert can manage your ads, google analytics or any other tracking scripts, legal stuff and even make editing your themes or writing code in content easier for you.
 
 All these from within a well contained and easy to use interface.  
   
