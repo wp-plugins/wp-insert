@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: wp-insert
+Plugin Name: Wp-Insert
 Plugin URI: http://www.wp-insert.smartlogix.co.in/
-Description: The ultimate wordpress plugin
+Description: WP-INSERT by SMARTLOGIX : The ultimate wordpress plugin
 Version: 2.0.1
 Author: Namith Jawahar
 Author URI: http://www.smartlogix.co.in/
