@@ -6,6 +6,5 @@ require_once(dirname(__FILE__).'/menu.php');
 require_once(dirname(__FILE__).'/styles.php');
 require_once(dirname(__FILE__).'/admin-page.php');
 require_once(dirname(__FILE__).'/controls.php');
-require_once(dirname(__FILE__).'/rules.php');
 require_once(dirname(__FILE__).'/jquery.php');
 ?>

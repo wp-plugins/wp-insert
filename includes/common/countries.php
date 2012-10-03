@@ -2,12 +2,30 @@
 $wpInsertGeoLocation = 'DEFAULT';
 function wp_insert_countries_init() {
 	global $wpInsertGeoLocation;
-	include(WP_INSERT_DIR.'/includes/common/geoip/geoip.inc');
-	$geoIP = geoip_open(WP_INSERT_DIR.'/includes/common/geoip/GeoIP.dat', GEOIP_MEMORY_CACHE);
-	$wpInsertGeoLocation = geoip_country_code_by_addr($geoIP, $_SERVER["REMOTE_ADDR"]);
-	geoip_close($geoIP);
+	try {
+		if(!class_exists('GeoIP')) {
+			include(WP_INSERT_DIR.'/includes/common/geoip/geoip.inc');
+		}
+		if(function_exists('geoip_open') && function_exists('mb_internal_encoding')) {
+			$geoIP = geoip_open(WP_INSERT_DIR.'/includes/common/geoip/GeoIP.dat', GEOIP_MEMORY_CACHE);
+			$wpInsertGeoLocation = geoip_country_code_by_addr($geoIP, $_SERVER["REMOTE_ADDR"]);
+			geoip_close($geoIP);
+		} else {
+			add_action('admin_notices', 'wp_insert_countries_error_notice', 0);
+		}
+	} catch(Exception $e) {
+		add_action('admin_notices', 'wp_insert_countries_error_notice', 0);
+	}
 }
 add_action('init', 'wp_insert_countries_init');
+
+function wp_insert_countries_error_notice(){
+	if (current_user_can('manage_options')) {
+		echo '<div id="message" class="error"><p>Geo Targeting has encountered an error, Please contact your web master.&nbsp;&nbsp;&nbsp;<b>ERROR DETAILS</b> : Please enable PHP mbstring extension on your server.</p></div>';
+	}
+    remove_action('admin_notices', 'wp_insert_countries_error_notice');
+}
+
 
 function wp_insert_get_countries() {
 	$data = array(
