@@ -39,9 +39,9 @@ require('../../../../../../wp-blog-header.php');
 			<?php
 			foreach($posts as $post) {
 				if($selected && in_array($post->ID, $selected)) {
-					echo '<option value="'.$post->ID.'" selected="selected">'.$post->post_title.'</option>';
+					echo '<option value="'.$post->ID.'" selected="selected">'.esc_html(substr($post->post_title, 0, 35)).'</option>';
 				} else {
-					echo '<option value="'.$post->ID.'">'.$post->post_title.'</option>';
+					echo '<option value="'.$post->ID.'">'.esc_html(substr($post->post_title, 0, 35)).'</option>';
 				}
 			}
 			?>

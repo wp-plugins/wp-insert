@@ -15,7 +15,7 @@ function wp_insert_track_post_instance($content) {
 add_action('wp', 'wp_insert_track_ad_instance', 1);
 function wp_insert_track_ad_instance($content) {
 	global $wpInsertAdInstance;
-	$networkCount = get_option('wp-insert-multiple-network-status');
+	$networkCount = get_option('wp_insert_multiple_network_status');
 	$wpInsertAdInstance = rand(1, $networkCount);
 }
 

@@ -39,9 +39,9 @@ require('../../../../../../wp-blog-header.php');
 			<?php
 			foreach($categories as $category) {
 				if($selected && in_array($category->term_id, $selected)) {
-					echo '<option value="'.$category->term_id.'" selected="selected">'.$category->name.'</option>';
+					echo '<option value="'.$category->term_id.'" selected="selected">'.esc_html(substr($category->name, 0, 35)).'</option>';
 				} else {
-					echo '<option value="'.$category->term_id.'">'.$category->name.'</option>';
+					echo '<option value="'.$category->term_id.'">'.esc_html(substr($category->name, 0, 35)).'</option>';
 				}
 			}
 			?>

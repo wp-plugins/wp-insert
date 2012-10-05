@@ -4,7 +4,7 @@ Donate link:www.wp-insert.smartlogix.co.in/support
 Tags: adsense,google,widget,post,admin,plugin,ads,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized,terms and conditions,terms,conditions,automatic terms and conditions
 Requires at least: 3.2
 Tested up to: 3.4.2
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,7 @@ All these from within a well contained and easy to use interface.
 *   Insert Ads in the middle of the content. (Option to control the minimum length required for an articles in which middle ads show up as well as option to exactly define where the middle ads appears in a post)
 *   Insert Ads to the left of the content.
 *   Insert Ads to the right of the content.
+*   Support for Short-codes.
 *   Extensive and elaborate RULES section to control when and where you display the ads. (Precise control down to single post/page level)
 *   Geo Targeting : Pick different ads for different Geographical locations. (You might want to promote an affiliate product for visitors from USA while showing Google Adsense to Rest of the World)
 

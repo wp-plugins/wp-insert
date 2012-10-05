@@ -2,13 +2,11 @@
 function wp_insert_admin_page($pageTitle, $sectionName, $optionName) { ?>
     <div class="wrap wp-insert">
 		<a href="http://www.wp-insert.smartlogix.co.in"><img src="<?php echo WP_INSERT_URL; ?>/includes/common/images/logo.png" /></a>
-		<form method="post" action="options.php" name="wp_auto_commenter_form">
+		<form method="post" action="options.php" name="wp_auto_commenter_form" id="wp_insert_form">
 			<?php settings_fields($optionName); ?>
 			<div id="poststuff" class="metabox-holder has-right-sidebar wp-insert-plugin">
 				<div id="side-info-column" class="inner-sidebar">
-					<p class="submit">
-						<input type="submit" name="Submit" class="button-primary submit" value="<?php esc_attr_e('Save Changes') ?>" />
-					</p>
+					<?php do_settings_sections('wp-insert-support'); ?>
 				</div>
 				<div id="post-body" class="has-sidebar">				
 					<div id="post-body-content" class="has-sidebar-content">

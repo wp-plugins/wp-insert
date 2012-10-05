@@ -391,7 +391,8 @@ label.iOSCheckLabelOff span {
 .wp-insert input.submit {
 	background: #21759B;
     padding: 10px 0;
-    width: 100%;
+    width: 97%;
+	border: 4px solid gold;
 }
 
 .wp-insert .rules {
