@@ -114,16 +114,23 @@ function wp_insert_get_vtabs($id, $args) {
 }
 
 function wp_insert_get_table($args) {
+	$args = wp_insert_sanitize_array($args, array('id', 'class', 'style', 'rows'));
 	$output = '<table'.(($args['id'] != '')?' id="'.$args['id'].'"':'').(($args['class'] != '')?' class="'.$args['class'].'"':'').(($args['style'] != '')?' style="'.$args['style'].'"':'').'>';
+	if(isset($args['rows']) && is_array($args['rows'])) {
 		foreach($args['rows'] as $row) {
-		$output .= '<tr'.(($row['id'] != '')?' id="'.$row['id'].'"':'').(($row['class'] != '')?' class="'.$row['class'].'"':'').(($row['style'] != '')?' style="'.$row['style'].'"':'').'>';
-		foreach($row['cells'] as $cell) {
-			if($cell['type'] == '') { $cell['type'] = 'td'; }
-			$output .= '<'.$cell['type'].(($cell['colspan'] != '')?' colspan="'.$cell['colspan'].'"':'').(($cell['id'] != '')?' id="'.$cell['id'].'"':'').(($cell['class'] != '')?' class="'.$cell['class'].'"':'').(($cell['style'] != '')?' style="'.$cell['style'].'"':'').'>';
-				$output .= $cell['content'];
-			$output .= '</'.$cell['type'].'>';
+			$row = wp_insert_sanitize_array($row, array('id', 'class', 'style', 'cells'));
+			$output .= '<tr'.(($row['id'] != '')?' id="'.$row['id'].'"':'').(($row['class'] != '')?' class="'.$row['class'].'"':'').(($row['style'] != '')?' style="'.$row['style'].'"':'').'>';
+			if(isset($row['cells']) && is_array($row['cells'])) {
+				foreach($row['cells'] as $cell) {
+					$cell = wp_insert_sanitize_array($cell, array('type', 'colspan', 'id', 'class', 'style', 'content'));
+					if($cell['type'] == '') { $cell['type'] = 'td'; }
+					$output .= '<'.$cell['type'].(($cell['colspan'] != '')?' colspan="'.$cell['colspan'].'"':'').(($cell['id'] != '')?' id="'.$cell['id'].'"':'').(($cell['class'] != '')?' class="'.$cell['class'].'"':'').(($cell['style'] != '')?' style="'.$cell['style'].'"':'').'>';
+						$output .= $cell['content'];
+					$output .= '</'.$cell['type'].'>';
+				}
+			}
+			$output .= '</tr>';
 		}
-		$output .= '</tr>';
 	}
 	$output .= '</table>';
 	return $output;

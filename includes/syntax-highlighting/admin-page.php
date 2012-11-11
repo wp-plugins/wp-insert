@@ -23,12 +23,11 @@ function wp_insert_syntax_highlighting_content($post, $args) {
 	$id = $args['id'];
 	$name = $args['args']['name'].'['.$location.']';
 	
-	if(!$data) {
-		$data = array();
-	}
+	if(!isset($data[$location])) { $data[$location] = array(); }
+	$data = wp_insert_sanitize_array($data[$location], array('status'));
 	
 	$controls = array();
-	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data[$location]['status'], '', 'Syntax Highlighting support using Editarea 0.8.2 by <a target="_blank" href="http://www.cdolivet.com/index.php?page=editArea">Christophe Dolivet</a>');
+	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data['status'], '', 'Syntax Highlighting support using Editarea 0.8.2 by <a target="_blank" href="http://www.cdolivet.com/index.php?page=editArea">Christophe Dolivet</a>');
 	
 	echo $controls['status']['html'];
 	echo wp_insert_get_script_tag($controls);

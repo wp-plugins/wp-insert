@@ -159,6 +159,6 @@ function wp_insert_showcase_content() {
 }
 
 function wp_insert_matching_blog_content() {
-	echo '<a href="http://smartlogix.co.in/matching-blog-for-100-offer/"><img src="'.WP_INSERT_URL.'/includes/common/images/blog_for_$100_ad.png" style="margin-top: 5px;" /></a><br /><small style="display: block; text-align: center;">This offer is only available for a limited period to Wp-Insert users and our existing customers.</small>';
+	echo '<a href="http://smartlogix.co.in/matching-blog-for-100-offer/"><img src="'.WP_INSERT_URL.'/includes/common/images/blog_for_$100_ad.png" style="margin-top: 5px;" /></a><br /><small style="display: block; text-align: center;">This offer is only available for a limited period to Wp-Insert users and our existing customers.</small><small style="display: block; text-align: center;">If you face any difficulties placing the order, drop us an email : <a href="mailto:support@smartlogix.co.in">support@smartlogix.co.in</a></small>';
 }
 ?>

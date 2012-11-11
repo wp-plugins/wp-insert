@@ -4,7 +4,7 @@ function wp_insert_multiple_network_activate_upgrade() {
 	if(!get_option('wp_insert_multiple_network_status')) {
 		$value = '1';
 		$value = wp_insert_multiple_network_upgrade_from_1x($value);
-		update_option('wp_insert_multiple_network_status', $values);
+		update_option('wp_insert_multiple_network_status', $value);
 	}
 }
 

@@ -42,31 +42,29 @@ function wp_insert_templateads_content($post, $args) {
 	$id = $args['id'];
 	$name = $args['args']['name'].'['.$location.']';
 	
-	if(!$data) {
-		$data = array();
-	}
+	if(!isset($data[$location])) { $data[$location] = array(); }
+	$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles'));
 	
 	$controls = array();
-	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data[$location]['status']);
-	$controls['ad_code_1'] = wp_insert_get_control('textarea', false, $name.'[ad_code_1]', $id.'-ad_code_1', $data[$location]['ad_code_1'], 'Ad Code (Primary Network):');
-	$controls['ad_code_2'] = wp_insert_get_control('textarea', false, $name.'[ad_code_2]', $id.'-ad_code_2', $data[$location]['ad_code_2'], 'Ad Code (Secondary Network):');
-	$controls['ad_code_3'] = wp_insert_get_control('textarea', false, $name.'[ad_code_3]', $id.'-ad_code_3', $data[$location]['ad_code_3'], 'Ad Code (Tertiary Network):');
+	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data['status']);
+	$controls['ad_code_1'] = wp_insert_get_control('textarea', false, $name.'[ad_code_1]', $id.'-ad_code_1', $data['ad_code_1'], 'Ad Code (Primary Network):');
+	$controls['ad_code_2'] = wp_insert_get_control('textarea', false, $name.'[ad_code_2]', $id.'-ad_code_2', $data['ad_code_2'], 'Ad Code (Secondary Network):');
+	$controls['ad_code_3'] = wp_insert_get_control('textarea', false, $name.'[ad_code_3]', $id.'-ad_code_3', $data['ad_code_3'], 'Ad Code (Tertiary Network):');
 
-	$countries = wp_insert_get_countries();
-	$controls['country_1'] = wp_insert_get_control('popup', false, $name.'[country_1]', $id.'-country_1', $data[$location]['country_1'], 'Geo Targets', '', array('type' => 'countries'));
-	$controls['country_code_1'] = wp_insert_get_control('textarea', false, $name.'[country_code_1]', $id.'-country_code_1', $data[$location]['country_code_1'], 'Ad Code', '', null, 'input widefat');
+	$controls['country_1'] = wp_insert_get_control('popup', false, $name.'[country_1]', $id.'-country_1', $data['country_1'], 'Geo Targets', '', array('type' => 'countries'));
+	$controls['country_code_1'] = wp_insert_get_control('textarea', false, $name.'[country_code_1]', $id.'-country_code_1', $data['country_code_1'], 'Ad Code', '', null, 'input widefat');
 
-	$controls['rules_exclude_home'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_home]', $id.'-rules_exclude_home', $data[$location]['rules_exclude_home'], '', '', null, '', false);
-	$controls['rules_exclude_archives'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_archives]', $id.'-rules_exclude_archives', $data[$location]['rules_exclude_archives'], '', '', null, '', false);
-	$controls['rules_exclude_categories'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_categories]', $id.'-rules_exclude_categories', $data[$location]['rules_exclude_categories'], '', '', null, '', false);
-	$controls['rules_categories_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_categories_exceptions]', $id.'-rules_categories_exceptions', $data[$location]['rules_categories_exceptions'], '', '', array('type' => 'categories'), '', false);
-	$controls['rules_exclude_search'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_search]', $id.'-rules_exclude_search', $data[$location]['rules_exclude_search'], '', '', null, '', false);
-	$controls['rules_exclude_page'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_page]', $id.'-rules_exclude_page', $data[$location]['rules_exclude_page'], '', '', null, '', false);
-	$controls['rules_page_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_page_exceptions]', $id.'-rules_page_exceptions', $data[$location]['rules_page_exceptions'], '', '', array('type' => 'pages'), '', false);
-	$controls['rules_exclude_post'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_post]', $id.'-rules_exclude_post', $data[$location]['rules_exclude_post'], '', '', null, '', false);
-	$controls['rules_post_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_post_exceptions]', $id.'-rules_post_exceptions', $data[$location]['rules_post_exceptions'], '', '', array('type' => 'posts'), '', false);
+	$controls['rules_exclude_home'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_home]', $id.'-rules_exclude_home', $data['rules_exclude_home'], '', '', null, '', false);
+	$controls['rules_exclude_archives'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_archives]', $id.'-rules_exclude_archives', $data['rules_exclude_archives'], '', '', null, '', false);
+	$controls['rules_exclude_categories'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_categories]', $id.'-rules_exclude_categories', $data['rules_exclude_categories'], '', '', null, '', false);
+	$controls['rules_categories_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_categories_exceptions]', $id.'-rules_categories_exceptions', $data['rules_categories_exceptions'], '', '', array('type' => 'categories'), '', false);
+	$controls['rules_exclude_search'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_search]', $id.'-rules_exclude_search', $data['rules_exclude_search'], '', '', null, '', false);
+	$controls['rules_exclude_page'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_page]', $id.'-rules_exclude_page', $data['rules_exclude_page'], '', '', null, '', false);
+	$controls['rules_page_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_page_exceptions]', $id.'-rules_page_exceptions', $data['rules_page_exceptions'], '', '', array('type' => 'pages'), '', false);
+	$controls['rules_exclude_post'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_post]', $id.'-rules_exclude_post', $data['rules_exclude_post'], '', '', null, '', false);
+	$controls['rules_post_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_post_exceptions]', $id.'-rules_post_exceptions', $data['rules_post_exceptions'], '', '', array('type' => 'posts'), '', false);
 	
-	$controls['styles'] = wp_insert_get_control('textarea', false, $name.'[styles]', $id.'-styles', $data[$location]['styles'], 'Styles:');
+	$controls['styles'] = wp_insert_get_control('textarea', false, $name.'[styles]', $id.'-styles', $data['styles'], 'Styles:');
 	
 	echo $controls['status']['html'];
 	

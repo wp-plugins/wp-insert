@@ -25,13 +25,12 @@ function wp_insert_legal_content($post, $args) {
 	$id = $args['id'];
 	$name = $args['args']['name'].'['.$location.']';
 	
-	if(!$data) {
-		$data = array();
-	}
+	if(!isset($data[$location])) { $data[$location] = array(); }
+	$data = wp_insert_sanitize_array($data[$location], array('content', 'pages'));
 	
 	$controls = array();
-	$controls['content'] = wp_insert_get_control('nicedit', false, $name.'[content]', $id.'-content', $data[$location]['content'], '', 'Leave the field empty to reset to the default content', null);
-	$controls['pages'] = wp_insert_get_control('popup', false, $name.'[pages]', $id.'-pages', $data[$location]['pages'], 'Assign Page(s):', '', array('type' => 'pages'));
+	$controls['content'] = wp_insert_get_control('nicedit', false, $name.'[content]', $id.'-content', $data['content'], '', 'Leave the field empty to reset to the default content', null);
+	$controls['pages'] = wp_insert_get_control('popup', false, $name.'[pages]', $id.'-pages', $data['pages'], 'Assign Page(s):', '', array('type' => 'pages'));
 	
 	$tabData = array(
 		array(

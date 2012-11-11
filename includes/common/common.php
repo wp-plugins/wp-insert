@@ -1,4 +1,5 @@
 <?php
+require_once(dirname(__FILE__).'/sanitize.php');
 require_once(dirname(__FILE__).'/activate-upgrade.php');
 require_once(dirname(__FILE__).'/status.php');
 require_once(dirname(__FILE__).'/countries.php');

@@ -23,18 +23,17 @@ function wp_insert_tracking_codes_content($post, $args) {
 	$data = $args['args']['data'];
 	$id = $args['id'];
 	$name = $args['args']['name'].'['.$location.']';
-	
-	if(!$data) {
-		$data = array();
-	}
+
+	if(!isset($data[$location])) { $data[$location] = array(); }
+	$data = wp_insert_sanitize_array($data[$location], array('status', 'code'));
 	
 	$controls = array();
-	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data[$location]['status']);
+	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data['status']);
 	
 	if($location == 'analytics') {
-		$controls['code'] = wp_insert_get_control('text', false, $name.'[code]', $id.'-code', $data[$location]['code'], 'Google Analytics Tracker ID:', 'Your Google Analytics Tracker ID (XX-XXXXX-X)');
+		$controls['code'] = wp_insert_get_control('text', false, $name.'[code]', $id.'-code', $data['code'], 'Google Analytics Tracker ID:', 'Your Google Analytics Tracker ID (XX-XXXXX-X)');
 	} else {
-		$controls['code'] = wp_insert_get_control('textarea', false, $name.'[code]', $id.'-code', $data[$location]['code'], 'Code:');
+		$controls['code'] = wp_insert_get_control('textarea', false, $name.'[code]', $id.'-code', $data['code'], 'Code:');
 	}
 
 	echo $controls['status']['html'];

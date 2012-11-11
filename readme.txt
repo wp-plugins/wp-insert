@@ -4,7 +4,7 @@ Donate link:www.wp-insert.smartlogix.co.in/support
 Tags: adsense,google,widget,post,admin,plugin,ads,in post ads,feed logo,smartlogix,ads in feeds,analytics,google analytics,header,footer,ad management,advertisements,content,ad,advertising,privacy policy,privacy,policy,automatic privacy policy,blog,feed,feeds,formatting,html,javascript,manage,post,posts,seo,sidebar,widget,widgets,wordpress,tracking,syntex highlighter,highlighting,theme tools,plugin tools,developer tools,highlighting,theme editor,plugin editor,middle ad,ad filtration,pagewise ad filtration,template ads,ad tags,adbrite ads,adsense ready,easy adsense,adsense optimized,terms and conditions,terms,conditions,automatic terms and conditions
 Requires at least: 3.2
 Tested up to: 3.4.2
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Wp-Insert is the most powerful yet easiest to use WordPress ad management plugin
 
 == Description ==
 
-**WP-INSERT by <a href=\"http://www.smartlogix.co.in/\" title=\"Smart Logix\">Smart Logix</a> : The ultimate wordpress plugin**
+**WP-INSERT by <a href=\"http://www.smartlogix.co.in/\" title=\"Smart Logix\">Smart Logix</a> : The ultimate wordpress plugin (No1 Adsense Plugin for Wordpress)**
 
 Wp-Insert is the most powerful yet easiest to use wordpress ad management plugin which does a lot more than ad management.
 
@@ -89,9 +89,12 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 8. Different Legal Page Templates
 
-9. Easy to manage analiytics or any other tracking codes
+9. Easy to manage analytics or any other tracking codes
 
 10. Syntax Highlighting
+== Change Log ==
+
+<a href=\"http://www.wp-insert.smartlogix.co.in/change-log/\" title=\"Change Log\">Change Log</a>
 == Upgrade Notice ==
 
 = 2.0 =

@@ -27,38 +27,41 @@ function wp_insert_inpostads_content($post, $args) {
 	$id = $args['id'];
 	$name = $args['args']['name'].'['.$location.']';
 	
-	if(!$data) {
-		$data = array();
+	if(!isset($data[$location])) { $data[$location] = array(); }
+	if($location == 'middle') {
+		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles', 'minimum_character_count', 'paragraph_buffer_count'));
+	} else {
+		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles'));
 	}
 	
 	$controls = array();
-	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data[$location]['status']);
-	$controls['ad_code_1'] = wp_insert_get_control('textarea', false, $name.'[ad_code_1]', $id.'-ad_code_1', $data[$location]['ad_code_1'], 'Ad Code (Primary Network):');
-	$controls['ad_code_2'] = wp_insert_get_control('textarea', false, $name.'[ad_code_2]', $id.'-ad_code_2', $data[$location]['ad_code_2'], 'Ad Code (Secondary Network):');
-	$controls['ad_code_3'] = wp_insert_get_control('textarea', false, $name.'[ad_code_3]', $id.'-ad_code_3', $data[$location]['ad_code_3'], 'Ad Code (Tertiary Network):');
+	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data['status']);
+	$controls['ad_code_1'] = wp_insert_get_control('textarea', false, $name.'[ad_code_1]', $id.'-ad_code_1', $data['ad_code_1'], 'Ad Code (Primary Network):');
+	$controls['ad_code_2'] = wp_insert_get_control('textarea', false, $name.'[ad_code_2]', $id.'-ad_code_2', $data['ad_code_2'], 'Ad Code (Secondary Network):');
+	$controls['ad_code_3'] = wp_insert_get_control('textarea', false, $name.'[ad_code_3]', $id.'-ad_code_3', $data['ad_code_3'], 'Ad Code (Tertiary Network):');
 
-	$controls['country_1'] = wp_insert_get_control('popup', false, $name.'[country_1]', $id.'-country_1', $data[$location]['country_1'], 'Geo Targets', '', array('type' => 'countries'));
-	$controls['country_code_1'] = wp_insert_get_control('textarea', false, $name.'[country_code_1]', $id.'-country_code_1', $data[$location]['country_code_1'], 'Ad Code', '', null, 'input widefat');
+	$controls['country_1'] = wp_insert_get_control('popup', false, $name.'[country_1]', $id.'-country_1', $data['country_1'], 'Geo Targets', '', array('type' => 'countries'));
+	$controls['country_code_1'] = wp_insert_get_control('textarea', false, $name.'[country_code_1]', $id.'-country_code_1', $data['country_code_1'], 'Ad Code', '', null, 'input widefat');
 
-	$controls['rules_exclude_home'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_home]', $id.'-rules_exclude_home', $data[$location]['rules_exclude_home'], '', '', null, '', false);
-	$controls['rules_home_instances'] = wp_insert_get_control('popup', false, $name.'[rules_home_instances]', $id.'-rules_home_instances', $data[$location]['rules_home_instances'], '', '', array('type' => 'instances'), '', false);
-	$controls['rules_exclude_archives'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_archives]', $id.'-rules_exclude_archives', $data[$location]['rules_exclude_archives'], '', '', null, '', false);
-	$controls['rules_archives_instances'] = wp_insert_get_control('popup', false, $name.'[rules_archives_instances]', $id.'-rules_archives_instances', $data[$location]['rules_archives_instances'], '', '', array('type' => 'instances'), '', false);
-	$controls['rules_exclude_categories'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_categories]', $id.'-rules_exclude_categories', $data[$location]['rules_exclude_categories'], '', '', null, '', false);
-	$controls['rules_categories_instances'] = wp_insert_get_control('popup', false, $name.'[rules_categories_instances]', $id.'-rules_categories_instances', $data[$location]['rules_categories_instances'], '', '', array('type' => 'instances'), '', false);
-	$controls['rules_categories_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_categories_exceptions]', $id.'-rules_categories_exceptions', $data[$location]['rules_categories_exceptions'], '', '', array('type' => 'categories'), '', false);
-	$controls['rules_exclude_search'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_search]', $id.'-rules_exclude_search', $data[$location]['rules_exclude_search'], '', '', null, '', false);
-	$controls['rules_search_instances'] = wp_insert_get_control('popup', false, $name.'[rules_search_instances]', $id.'-rules_search_instances', $data[$location]['rules_search_instances'], '', '', array('type' => 'instances'), '', false);
-	$controls['rules_exclude_page'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_page]', $id.'-rules_exclude_page', $data[$location]['rules_exclude_page'], '', '', null, '', false);
-	$controls['rules_page_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_page_exceptions]', $id.'-rules_page_exceptions', $data[$location]['rules_page_exceptions'], '', '', array('type' => 'pages'), '', false);
-	$controls['rules_exclude_post'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_post]', $id.'-rules_exclude_post', $data[$location]['rules_exclude_post'], '', '', null, '', false);
-	$controls['rules_post_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_post_exceptions]', $id.'-rules_post_exceptions', $data[$location]['rules_post_exceptions'], '', '', array('type' => 'posts'), '', false);
+	$controls['rules_exclude_home'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_home]', $id.'-rules_exclude_home', $data['rules_exclude_home'], '', '', null, '', false);
+	$controls['rules_home_instances'] = wp_insert_get_control('popup', false, $name.'[rules_home_instances]', $id.'-rules_home_instances', $data['rules_home_instances'], '', '', array('type' => 'instances'), '', false);
+	$controls['rules_exclude_archives'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_archives]', $id.'-rules_exclude_archives', $data['rules_exclude_archives'], '', '', null, '', false);
+	$controls['rules_archives_instances'] = wp_insert_get_control('popup', false, $name.'[rules_archives_instances]', $id.'-rules_archives_instances', $data['rules_archives_instances'], '', '', array('type' => 'instances'), '', false);
+	$controls['rules_exclude_categories'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_categories]', $id.'-rules_exclude_categories', $data['rules_exclude_categories'], '', '', null, '', false);
+	$controls['rules_categories_instances'] = wp_insert_get_control('popup', false, $name.'[rules_categories_instances]', $id.'-rules_categories_instances', $data['rules_categories_instances'], '', '', array('type' => 'instances'), '', false);
+	$controls['rules_categories_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_categories_exceptions]', $id.'-rules_categories_exceptions', $data['rules_categories_exceptions'], '', '', array('type' => 'categories'), '', false);
+	$controls['rules_exclude_search'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_search]', $id.'-rules_exclude_search', $data['rules_exclude_search'], '', '', null, '', false);
+	$controls['rules_search_instances'] = wp_insert_get_control('popup', false, $name.'[rules_search_instances]', $id.'-rules_search_instances', $data['rules_search_instances'], '', '', array('type' => 'instances'), '', false);
+	$controls['rules_exclude_page'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_page]', $id.'-rules_exclude_page', $data['rules_exclude_page'], '', '', null, '', false);
+	$controls['rules_page_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_page_exceptions]', $id.'-rules_page_exceptions', $data['rules_page_exceptions'], '', '', array('type' => 'pages'), '', false);
+	$controls['rules_exclude_post'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_post]', $id.'-rules_exclude_post', $data['rules_exclude_post'], '', '', null, '', false);
+	$controls['rules_post_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_post_exceptions]', $id.'-rules_post_exceptions', $data['rules_post_exceptions'], '', '', array('type' => 'posts'), '', false);
 	
-	$controls['styles'] = wp_insert_get_control('textarea', false, $name.'[styles]', $id.'-styles', $data[$location]['styles'], 'Styles:');
+	$controls['styles'] = wp_insert_get_control('textarea', false, $name.'[styles]', $id.'-styles', $data['styles'], 'Styles:');
 	
 	if($location == 'middle') {
-		$controls['minimum_character_count'] = wp_insert_get_control('text', false, $name.'[minimum_character_count]', $id.'-minimum_character_count', $data[$location]['minimum_character_count'], 'Minimum Character Count', 'Show the ad only if the Content meets the minimum character count. If this parameter is set to 0 (or empty) minimum character count check will be deactivated.', null, 'input widefat');
-		$controls['paragraph_buffer_count'] = wp_insert_get_control('text', false, $name.'[paragraph_buffer_count]', $id.'-paragraph_buffer_count', $data[$location]['paragraph_buffer_count'], 'Paragraph Buffer Count', 'Shows the ad after X number of Paragraphs.  If this parameter is set to 0 (or empty) the ad will appear in the middle of the content.', null, 'input widefat');
+		$controls['minimum_character_count'] = wp_insert_get_control('text', false, $name.'[minimum_character_count]', $id.'-minimum_character_count', $data['minimum_character_count'], 'Minimum Character Count', 'Show the ad only if the Content meets the minimum character count. If this parameter is set to 0 (or empty) minimum character count check will be deactivated.', null, 'input widefat');
+		$controls['paragraph_buffer_count'] = wp_insert_get_control('text', false, $name.'[paragraph_buffer_count]', $id.'-paragraph_buffer_count', $data['paragraph_buffer_count'], 'Paragraph Buffer Count', 'Shows the ad after X number of Paragraphs.  If this parameter is set to 0 (or empty) the ad will appear in the middle of the content.', null, 'input widefat');
 	}
 	
 	echo $controls['status']['html'];
