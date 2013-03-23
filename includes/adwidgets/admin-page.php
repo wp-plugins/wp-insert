@@ -63,6 +63,12 @@ function wp_insert_adwidgets_content($post, $args) {
 	$controls['rules_page_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_page_exceptions]', $id.'-rules_page_exceptions', $data['rules_page_exceptions'], '', '', array('type' => 'pages'), '', false);
 	$controls['rules_exclude_post'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_post]', $id.'-rules_exclude_post', $data['rules_exclude_post'], '', '', null, '', false);
 	$controls['rules_post_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_post_exceptions]', $id.'-rules_post_exceptions', $data['rules_post_exceptions'], '', '', array('type' => 'posts'), '', false);
+	$post_types = get_post_types(array('public'   => true, '_builtin' => false), 'names'); 
+	if($post_types) {
+		foreach($post_types as $post_type) {
+			$controls['rules_exclude_cpt_'.$post_type] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_cpt_'.$post_type.']', $id.'-rules_exclude_cpt_'.$post_type, $data['rules_exclude_cpt_'.$post_type], '', '', null, '', false);
+		}
+	}
 	
 	$controls['styles'] = wp_insert_get_control('textarea', false, $name.'[styles]', $id.'-styles', $data['styles'], 'Styles:');
 	
@@ -241,6 +247,35 @@ function wp_insert_adwidgets_rules_content($controls) {
 			)
 		)
 	);
+	array_push(
+		$rulesTable['rows'], 
+		array(
+			'cells' => array(
+				array('colspan' => '3', 'content' => '&nbsp;')
+			)
+		),
+		array(
+			'cells' => array(
+				array('style' => 'text-align: left;', 'colspan' => '3', 'type' => 'th', 'content' => 'Custom Post Types')
+			)
+		)
+	);
+	
+	$post_types = get_post_types(array('public'   => true, '_builtin' => false), 'object'); 
+	if($post_types) {
+		foreach($post_types as $post_type) {
+			array_push(
+				$rulesTable['rows'],
+				array(
+					'cells' => array(
+						array('content' => $post_type->labels->name),
+						array('content' => '&nbsp;:&nbsp;'),
+						array('content' => $controls['rules_exclude_cpt_'.$post_type->name]['html'])
+					)
+				)
+			);
+		}
+	}
 	
 	return wp_insert_get_table($rulesTable);
 }

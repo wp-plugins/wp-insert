@@ -41,6 +41,7 @@ function wp_insert_get_page_details() {
 			$page_details['type'] = 'POST';
 		} else {
 			$page_details['type'] = 'CUSTOM';
+			$page_details['type_name'] = $post->post_type;
 		}
 	}
 	
@@ -102,7 +103,9 @@ function wp_insert_get_ad_status($rules) {
 			}
 			break;
 		case 'CUSTOM':
-			return true;
+			if($rules['rules_exclude_cpt_'.$page_details['type_name']]) {
+				return false;
+			}
 			break;
 	}
 	return true;

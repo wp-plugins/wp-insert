@@ -17,7 +17,6 @@ function wp_insert_support_admin_init() {
     add_settings_section('wp-insert-support-top', '', 'wp_insert_support_section', 'wp-insert-support');
 	add_meta_box('wp_insert_facebook', 'Like Us On Facebook', 'wp_insert_facebook_content', 'wp-insert-support-top', 'advanced', 'high');
 	add_meta_box('wp_insert_donate', 'Donate and Support Free Plugins', 'wp_insert_donate_content', 'wp-insert-support-top', 'advanced', 'high');
-	add_meta_box('wp_insert_matching_blog', 'Matching Blog for $100', 'wp_insert_matching_blog_content', 'wp-insert-support-bottom', 'advanced', 'high');
 	if(get_option('wp_insert_showcase_submission') != 'SUBMITTED') {
 		add_meta_box('wp_insert_showcase', 'Showcase your Site', 'wp_insert_showcase_content', 'wp-insert-support-bottom', 'advanced', 'high');
 	}
@@ -156,9 +155,5 @@ function wp_insert_showcase_content() {
 			echo '</script>';
 		echo '</div>';
 	}
-}
-
-function wp_insert_matching_blog_content() {
-	echo '<a href="http://smartlogix.co.in/matching-blog-for-100-offer/"><img src="'.WP_INSERT_URL.'/includes/common/images/blog_for_$100_ad.png" style="margin-top: 5px;" /></a><br /><small style="display: block; text-align: center;">This offer is only available for a limited period to Wp-Insert users and our existing customers.</small><small style="display: block; text-align: center;">If you face any difficulties placing the order, drop us an email : <a href="mailto:support@smartlogix.co.in">support@smartlogix.co.in</a></small>';
 }
 ?>
