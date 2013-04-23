@@ -6,11 +6,11 @@ require('../../../../../../wp-blog-header.php');
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/themes/smoothness/jquery-ui.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo WP_INSERT_URL; ?>/includes/common/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo WP_INSERT_URL; ?>/includes/common/css/style.css?version=<?php echo WP_INSERT_VERSION; ?>" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="<?php echo WP_INSERT_URL; ?>/includes/common/js/jquery-jvert-tabs-1.1.4.js"></script>
-		<script type="text/javascript" src="<?php echo WP_INSERT_URL; ?>/includes/common/js/jquery.miniColors.js"></script>
+		<script type="text/javascript" src="<?php echo WP_INSERT_URL; ?>/includes/common/js/jquery-jvert-tabs-1.1.4.js?version=<?php echo WP_INSERT_VERSION; ?>"></script>
+		<script type="text/javascript" src="<?php echo WP_INSERT_URL; ?>/includes/common/js/jquery.miniColors.js?version=<?php echo WP_INSERT_VERSION; ?>"></script>
 		<script type="text/javascript">		
 			jQuery(document).ready( function(jQuery) {
 				jQuery("#chitikaVtabs").jVertTabs({equalHeights: false});
@@ -103,7 +103,7 @@ require('../../../../../../wp-blog-header.php');
 				<div id="#chitikaVtabColors" style="min-height: 263px;">
 					<p>
 						<label>Link</label>
-						<input id="chitikaLinkColor" type="text" class="input widefat minicolors" value="0000CC" />
+						<input id="chitikaLinkColor" type="text" class="input widefat minicolors" value="#0000CC" />
 						<small>Use this field to specify the color of links in your ad.</small>
 					</p>
 					<p>

@@ -17,10 +17,10 @@ function wp_insert_add_ordinal_number_suffix($num) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/themes/smoothness/jquery-ui.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo WP_INSERT_URL; ?>/includes/common/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo WP_INSERT_URL; ?>/includes/common/css/style.css?version=<?php echo WP_INSERT_VERSION; ?>" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="<?php echo WP_INSERT_URL; ?>/includes/common/js/ui.multiselect.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="<?php echo WP_INSERT_URL; ?>/includes/common/js/ui.multiselect.js?version=<?php echo WP_INSERT_VERSION; ?>"></script>
 		<script type="text/javascript">
 			jQuery(function(){
 				jQuery(".multiselect").multiselect({dividerLocation: 0.5});
