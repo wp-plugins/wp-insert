@@ -24,6 +24,11 @@ function wp_insert_admin_page($pageTitle, $sectionName, $optionName) { ?>
 				jQuery('.if-js-closed').removeClass('if-js-closed').addClass('closed');
 				postboxes.add_postbox_toggles('<?php echo $sectionName; ?>');
 			});
+			
+			function wpInsertChitikaPopUpHandler(sender) {
+				jQuery.colorbox({overlayClose: false, scrolling: false, transition: "elastic", innerWidth: "577px", innerHeight: "402px", iframe: true, href: "<?php echo WP_INSERT_URL; ?>/includes/common/popups/chitika.php?target="+sender});
+				return false;
+			}
 			</script>
 		</form>
     </div>

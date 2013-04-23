@@ -47,12 +47,12 @@ function wp_insert_templateads_content($post, $args) {
 	
 	$controls = array();
 	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data['status']);
-	$controls['ad_code_1'] = wp_insert_get_control('textarea', false, $name.'[ad_code_1]', $id.'-ad_code_1', $data['ad_code_1'], 'Ad Code (Primary Network):');
-	$controls['ad_code_2'] = wp_insert_get_control('textarea', false, $name.'[ad_code_2]', $id.'-ad_code_2', $data['ad_code_2'], 'Ad Code (Secondary Network):');
-	$controls['ad_code_3'] = wp_insert_get_control('textarea', false, $name.'[ad_code_3]', $id.'-ad_code_3', $data['ad_code_3'], 'Ad Code (Tertiary Network):');
+	$controls['ad_code_1'] = wp_insert_get_control('textarea', false, $name.'[ad_code_1]', $id.'-ad_code_1', $data['ad_code_1'], 'Ad Code (Primary Network):', '', null, 'input widefat chitika');
+	$controls['ad_code_2'] = wp_insert_get_control('textarea', false, $name.'[ad_code_2]', $id.'-ad_code_2', $data['ad_code_2'], 'Ad Code (Secondary Network):', '', null, 'input widefat chitika');
+	$controls['ad_code_3'] = wp_insert_get_control('textarea', false, $name.'[ad_code_3]', $id.'-ad_code_3', $data['ad_code_3'], 'Ad Code (Tertiary Network):', '', null, 'input widefat chitika');
 
 	$controls['country_1'] = wp_insert_get_control('popup', false, $name.'[country_1]', $id.'-country_1', $data['country_1'], 'Geo Targets', '', array('type' => 'countries'));
-	$controls['country_code_1'] = wp_insert_get_control('textarea', false, $name.'[country_code_1]', $id.'-country_code_1', $data['country_code_1'], 'Ad Code', '', null, 'input widefat');
+	$controls['country_code_1'] = wp_insert_get_control('textarea', false, $name.'[country_code_1]', $id.'-country_code_1', $data['country_code_1'], 'Ad Code', '', null, 'input widefat chitika');
 
 	$controls['rules_exclude_home'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_home]', $id.'-rules_exclude_home', $data['rules_exclude_home'], '', '', null, '', false);
 	$controls['rules_exclude_archives'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_archives]', $id.'-rules_exclude_archives', $data['rules_exclude_archives'], '', '', null, '', false);

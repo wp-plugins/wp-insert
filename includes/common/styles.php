@@ -1,6 +1,6 @@
 <?php
 function wp_insert_admin_styles() {	
-	wp_enqueue_style('wp-insert-styles', WP_INSERT_URL.'/includes/common/css/style.css', false);
+	wp_enqueue_style('wp-insert-styles', WP_INSERT_URL.'/includes/common/css/style.css?version=2.0.5', false);
 	wp_enqueue_style('thickbox');
 	wp_enqueue_script('common');
 	wp_enqueue_script('jquery-ui-tabs');

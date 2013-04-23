@@ -14,7 +14,7 @@ function wp_insert_multiple_network_status_content($post, $args) {
 	echo '<p>';
 		echo '<b>Recommended Ad Networks</b><br />';		
 		echo '<a href="http://google.com/adsense"><img src="'.WP_INSERT_URL.'/includes/common/images/adsense.gif" /></a>';
-		echo '<a href="https://chitika.com/publishers/apply.php?refid=smartlogix" style="margin-left: 10px;"><img src="'.WP_INSERT_URL.'/includes/common/images/chitika.gif" /></a>';
+		echo '<a href="https://chitika.com/publishers/apply.php?refid=smartlogix" style="margin-left: 10px;"><img src="'.WP_INSERT_URL.'/includes/common/images/chitika.png" /></a>';
 	echo '</p>';
 }
 ?>

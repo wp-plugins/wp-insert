@@ -145,6 +145,7 @@ function wp_insert_get_script_tag($content) {
 	} else {
 		$script = $content;
 	}
+	
 	$output = '<script type="text/javascript">';
 		$output .= 'jQuery(document).ready(function(){'.$script.'});';
 	$output .= '</script>';
