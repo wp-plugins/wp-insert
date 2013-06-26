@@ -43,7 +43,7 @@ function wp_insert_templateads_content($post, $args) {
 	$name = $args['args']['name'].'['.$location.']';
 	
 	if(!isset($data[$location])) { $data[$location] = array(); }
-	$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles'));
+	$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_categories_post_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles'));
 	
 	$controls = array();
 	$controls['status'] = wp_insert_get_control('tz-checkbox', false, $name.'[status]', $id.'-status', $data['status']);
@@ -58,6 +58,7 @@ function wp_insert_templateads_content($post, $args) {
 	$controls['rules_exclude_archives'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_archives]', $id.'-rules_exclude_archives', $data['rules_exclude_archives'], '', '', null, '', false);
 	$controls['rules_exclude_categories'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_categories]', $id.'-rules_exclude_categories', $data['rules_exclude_categories'], '', '', null, '', false);
 	$controls['rules_categories_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_categories_exceptions]', $id.'-rules_categories_exceptions', $data['rules_categories_exceptions'], '', '', array('type' => 'categories'), '', false);
+	$controls['rules_categories_post_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_categories_post_exceptions]', $id.'-rules_categories_post_exceptions', $data['rules_categories_post_exceptions'], '', '', array('type' => 'categories'), '', false);
 	$controls['rules_exclude_search'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_search]', $id.'-rules_exclude_search', $data['rules_exclude_search'], '', '', null, '', false);
 	$controls['rules_exclude_page'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_page]', $id.'-rules_exclude_page', $data['rules_exclude_page'], '', '', null, '', false);
 	$controls['rules_page_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_page_exceptions]', $id.'-rules_page_exceptions', $data['rules_page_exceptions'], '', '', array('type' => 'pages'), '', false);
@@ -174,6 +175,13 @@ function wp_insert_templateads_rules_content($controls) {
 				array('content' => 'Exceptions'),
 				array('content' => '&nbsp;:&nbsp;'),
 				array('content' => $controls['rules_categories_exceptions']['html'])
+			)
+		),
+		array(
+			'cells' => array(
+				array('content' => 'Post Exceptions'),
+				array('content' => '&nbsp;:&nbsp;'),
+				array('content' => $controls['rules_categories_post_exceptions']['html'])
 			)
 		)
 	);

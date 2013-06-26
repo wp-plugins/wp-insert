@@ -4,7 +4,8 @@ function wp_insert_syntax_highlighting_admin_scripts() {
 	$options = get_option('wp_insert_syntax_highlighting_options');
 	if($options) {
 		if($options['editor']['status']) {
-			wp_enqueue_script('editarea', WP_INSERT_URL.'/includes/syntax-highlighting/editarea/edit_area_full.js');
+			add_action('admin_enqueue_scripts', 'wp_insert_syntax_highlighting_admin_enqueue_scripts');
+			
 			add_action('admin_footer', 'wp_insert_syntax_highlighting_admin_footer');
 		}
 		
@@ -13,6 +14,12 @@ function wp_insert_syntax_highlighting_admin_scripts() {
 			add_action('wp_footer', 'wp_insert_syntax_highlighting_wp_footer');
 			add_shortcode('code', 'wp_insert_syntax_highlighting_shortcode_code');
 		}
+	}
+}
+
+function wp_insert_syntax_highlighting_admin_enqueue_scripts($page) {
+	if(('theme-editor.php' == $page) || ('plugin-editor.php' == $page)) {
+		wp_enqueue_script('editarea', WP_INSERT_URL.'/includes/syntax-highlighting/editarea/edit_area_full.js');
 	}
 }
 

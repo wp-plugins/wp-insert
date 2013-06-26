@@ -39,6 +39,7 @@ function wp_insert_get_page_details() {
 	} else if(is_single()) {
 		if(is_singular('post')) {
 			$page_details['type'] = 'POST';
+			$page_details['categories'] = wp_get_post_categories($page_details['ID']);
 		} else {
 			$page_details['type'] = 'CUSTOM';
 			$page_details['type_name'] = $post->post_type;
@@ -99,6 +100,8 @@ function wp_insert_get_ad_status($rules) {
 			if($rules['rules_exclude_post']) {
 				return false;
 			} else if($rules['rules_post_exceptions'] && (in_array($page_details['ID'], split(',', $rules['rules_post_exceptions'])))) {
+				return false;
+			} else if($rules['rules_categories_post_exceptions'] && is_array($page_details['categories']) && (count(array_intersect(array_unique($page_details['categories']), array_unique(split(',', $rules['rules_categories_post_exceptions'])))) > 0)) {
 				return false;
 			}
 			break;

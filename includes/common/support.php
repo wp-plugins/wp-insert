@@ -17,6 +17,8 @@ function wp_insert_support_admin_init() {
     add_settings_section('wp-insert-support-top', '', 'wp_insert_support_section', 'wp-insert-support');
 	add_meta_box('wp_insert_facebook', 'Like Us On Facebook', 'wp_insert_facebook_content', 'wp-insert-support-top', 'advanced', 'high');
 	add_meta_box('wp_insert_donate', 'Donate and Support Free Plugins', 'wp_insert_donate_content', 'wp-insert-support-top', 'advanced', 'high');
+	add_meta_box('wp_insert_hate_campaign', 'Save Wp-Insert', 'wp_insert_hate_campaign_content', 'wp-insert-support-top', 'advanced', 'high');
+	delete_option('wp_insert_showcase_submission');
 	if(get_option('wp_insert_showcase_submission') != 'SUBMITTED') {
 		add_meta_box('wp_insert_showcase', 'Showcase your Site', 'wp_insert_showcase_content', 'wp-insert-support-bottom', 'advanced', 'high');
 	}
@@ -34,6 +36,13 @@ function wp_insert_facebook_content() {
 
 function wp_insert_donate_content() {
 	echo '<a href="http://www.wp-insert.smartlogix.co.in/support/"><img src="'.WP_INSERT_URL.'/includes/common/images/donate_btn.png" style="margin-top: 5px;" /></a><br /><small style="display: block; text-align: center;"><a href="http://wordpress.org/extend/plugins/wp-insert/">Rate the plugin in Wordpress Plugin Repository</a></small>';
+}
+
+function wp_insert_hate_campaign_content() {
+	echo '<p>Some users (most likely sponsored by some premium plugin) are spreading a Hate Campaign against Wp-Insert churning away Forum Posts and Negative reviews about the plugin on different sites.</p>';
+	echo '<p>Please help us defend these unscrupulous activities by writing a honest <a href="http://wordpress.org/support/view/plugin-reviews/wp-insert">review</a> about the plugin and <a href="http://wordpress.org/plugins/wp-insert">rating</a> the plugin in the  Plugin Repository.</p>';
+	echo '<p>Most of you will think about leaving a rating or visiting the forum only when something goes wrong while thousands are using the plugin satisfactorily which  unfortunately is not Reported OR Documented.</p>';
+	echo '<p style="font-weight: bold; color: #FF0000;"">IF YOU FIND THIS PLUGIN USEFUL DO LEAVE A HONEST <a href="http://wordpress.org/plugins/wp-insert">RATING</a> AND <a href="http://wordpress.org/support/view/plugin-reviews/wp-insert">REVIEW</a> IN THE REPOSITORY AND HELP US AGAINST THE MARKETING CAMPAIGN AIMED TO TARNISH A HIGHLY USEFUL, FREE, FEATURE RICH PLUGIN.</p>';
 }
 
 function wp_insert_showcase_content() {
@@ -145,7 +154,7 @@ function wp_insert_showcase_content() {
 					echo '<option value="622">World News</option>';
 				echo '</select>';
 			echo '</p>';
-			echo '<p><label for="admin_email">Admin Email</label></br /><input type="text" class="widefat" id="admin_email" name="admin_email" value="" /><br /><small style="text-align: justify; display: block">Your Email wont be shared with any third party and will only be used to sent notifications about SmartLogix Services related to WordPress.  All data provided to SmartLogix is bound by our <a href="http://smartlogix.co.in/privacy-policy/">privacy policy</a></small></p>';
+			echo '<p><label for="admin_email">Admin Email</label></br /><input type="email" class="widefat" id="admin_email" name="admin_email" value="" /><br /><small style="text-align: justify; display: block">Your Email wont be shared with any third party and will only be used to sent notifications about SmartLogix Services related to WordPress.  All data provided to SmartLogix is bound by our <a href="http://smartlogix.co.in/privacy-policy/">privacy policy</a></small></p>';
 			echo '<p><input type="hidden" id="is_showcase_submission" name="is_showcase_submission" value="false" /><input type="button" class="button-secondary" value="Submit" style="float: right" onclick="showcase_submit()" /></p><div style="clear: both;"></div>';
 			echo '<script type="text/javascript">';
 				echo 'function showcase_submit() {';

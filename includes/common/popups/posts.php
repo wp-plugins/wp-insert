@@ -29,7 +29,7 @@ require('../../../../../../wp-blog-header.php');
 	</head>
 	<body>
 		<?php
-		$post = get_posts('numberposts=100');
+		$posts = get_posts('numberposts=100');
 		$selected = null;
 		if(isset($_GET['data'])) {
 			$selected = split(',', urldecode((string)$_GET['data']));

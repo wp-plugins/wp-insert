@@ -29,7 +29,7 @@ require('../../../../../../wp-blog-header.php');
 	</head>
 	<body>
 		<?php
-		$categories = get_categories('number=100');
+		$categories = get_categories('number=100&hide_empty=0');
 		$selected = null;
 		if(isset($_GET['data'])) {
 			$selected = split(',', urldecode((string)$_GET['data']));

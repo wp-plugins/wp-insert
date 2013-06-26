@@ -29,9 +29,9 @@ function wp_insert_inpostads_content($post, $args) {
 	
 	if(!isset($data[$location])) { $data[$location] = array(); }
 	if($location == 'middle') {
-		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles', 'minimum_character_count', 'paragraph_buffer_count'));
+		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_categories_post_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles', 'minimum_character_count', 'paragraph_buffer_count'));
 	} else {
-		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles'));
+		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_categories_post_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles'));
 	}
 	
 	$controls = array();
@@ -50,6 +50,7 @@ function wp_insert_inpostads_content($post, $args) {
 	$controls['rules_exclude_categories'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_categories]', $id.'-rules_exclude_categories', $data['rules_exclude_categories'], '', '', null, '', false);
 	$controls['rules_categories_instances'] = wp_insert_get_control('popup', false, $name.'[rules_categories_instances]', $id.'-rules_categories_instances', $data['rules_categories_instances'], '', '', array('type' => 'instances'), '', false);
 	$controls['rules_categories_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_categories_exceptions]', $id.'-rules_categories_exceptions', $data['rules_categories_exceptions'], '', '', array('type' => 'categories'), '', false);
+	$controls['rules_categories_post_exceptions'] = wp_insert_get_control('popup', false, $name.'[rules_categories_post_exceptions]', $id.'-rules_categories_post_exceptions', $data['rules_categories_post_exceptions'], '', '', array('type' => 'categories'), '', false);
 	$controls['rules_exclude_search'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_search]', $id.'-rules_exclude_search', $data['rules_exclude_search'], '', '', null, '', false);
 	$controls['rules_search_instances'] = wp_insert_get_control('popup', false, $name.'[rules_search_instances]', $id.'-rules_search_instances', $data['rules_search_instances'], '', '', array('type' => 'instances'), '', false);
 	$controls['rules_exclude_page'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_page]', $id.'-rules_exclude_page', $data['rules_exclude_page'], '', '', null, '', false);
@@ -198,6 +199,13 @@ function wp_insert_inpostads_rules_content($controls) {
 				array('content' => 'Exceptions'),
 				array('content' => '&nbsp;:&nbsp;'),
 				array('content' => $controls['rules_categories_exceptions']['html'])
+			)
+		),
+		array(
+			'cells' => array(
+				array('content' => 'Post Exceptions'),
+				array('content' => '&nbsp;:&nbsp;'),
+				array('content' => $controls['rules_categories_post_exceptions']['html'])
 			)
 		)
 	);
