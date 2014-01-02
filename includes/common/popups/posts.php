@@ -22,7 +22,7 @@ require('../../../../../../wp-blog-header.php');
 					selectedItems.push(pagePicker.options[pagePicker.selectedIndex].value);
 					pagePicker.options[pagePicker.selectedIndex].selected = false;
 				}
-				parent.jQuery('#<?php echo (string)$_GET['target']; ?>').val(selectedItems.join(','));
+				parent.jQuery('#<?php echo wp_kses((string)$_GET['target'], ''); ?>').val(selectedItems.join(','));
 				parent.jQuery.colorbox.close();
 			}
 		</script>

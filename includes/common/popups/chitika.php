@@ -32,7 +32,7 @@ require('../../../../../../wp-blog-header.php');
 				adCode += 'ch_color_bg = "'+jQuery("#chitikaBackgroundColor").val()+'";\n';
 				adCode += '</'+'script>\n';
 				adCode += '<script src="http://scripts.chitika.net/eminimalls/amm.js" type="text/javascript"></'+'script>';
-				parent.jQuery('#<?php echo (string)$_GET['target']; ?>').val(adCode);
+				parent.jQuery('#<?php echo wp_kses((string)$_GET['target'], ''); ?>').val(adCode);
 				parent.jQuery.colorbox.close();
 			}
 			function validateUsername(sender) {
