@@ -31,7 +31,7 @@ require('../../../../../../wp-blog-header.php');
 		<?php
 		$selected = null;
 		if(isset($_GET['data'])) {
-			$selected = split(',', urldecode((string)$_GET['data']));
+			$selected = explode(',', urldecode((string)$_GET['data']));
 		}
 		?>
 		<select id="country_picker" class="multiselect" multiple="multiple" >

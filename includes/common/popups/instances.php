@@ -43,7 +43,7 @@ function wp_insert_add_ordinal_number_suffix($num) {
 		$posts_per_page = get_option('posts_per_page');
 		$selected = null;
 		if(isset($_GET['data'])) {
-			$selected = split(',', urldecode((string)$_GET['data']));
+			$selected = explode(',', urldecode((string)$_GET['data']));
 		}
 		?>
 		<select id="instance_picker" class="multiselect" multiple="multiple" >

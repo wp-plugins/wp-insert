@@ -32,7 +32,7 @@ require('../../../../../../wp-blog-header.php');
 		$posts = get_posts('numberposts=100');
 		$selected = null;
 		if(isset($_GET['data'])) {
-			$selected = split(',', urldecode((string)$_GET['data']));
+			$selected = explode(',', urldecode((string)$_GET['data']));
 		}
 		?>
 		<select id="post_picker" class="multiselect" multiple="multiple" >

@@ -32,7 +32,7 @@ require('../../../../../../wp-blog-header.php');
 		$categories = get_categories('number=100&hide_empty=0');
 		$selected = null;
 		if(isset($_GET['data'])) {
-			$selected = split(',', urldecode((string)$_GET['data']));
+			$selected = explode(',', urldecode((string)$_GET['data']));
 		}
 		?>
 		<select id="category_picker" class="multiselect" multiple="multiple" >

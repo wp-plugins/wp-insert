@@ -32,7 +32,7 @@ require('../../../../../../wp-blog-header.php');
 		$pages = get_pages('number=100');
 		$selected = null;
 		if(isset($_GET['data'])) {
-			$selected = split(',', urldecode((string)$_GET['data']));
+			$selected = explode(',', urldecode((string)$_GET['data']));
 		}
 		?>
 		<select id="page_picker" class="multiselect" multiple="multiple" >

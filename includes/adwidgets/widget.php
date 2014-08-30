@@ -19,7 +19,7 @@ class wpInsertAdWidget extends WP_Widget {
 			echo $before_widget;
 			if (!empty($title)) { echo $before_title.$title.$after_title; }		
 			
-			if(($options['adwidgets-'.$instance['instance']]['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, split(',', $options['adwidgets-'.$instance['instance']]['country_1'])))) {
+			if(($options['adwidgets-'.$instance['instance']]['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, explode(',', $options['adwidgets-'.$instance['instance']]['country_1'])))) {
 				echo '<div class="wpInsert wpInsertAdWidget"'.(($options['adwidgets-'.$instance['instance']]['styles'] != '')?' style="'.$options['adwidgets-'.$instance['instance']]['styles'].'"':'').'>'.do_shortcode($options['adwidgets-'.$instance['instance']]['country_code_1']).'</div>';
 			} else {
 				echo '<div class="wpInsert wpInsertAdWidget"'.(($options['adwidgets-'.$instance['instance']]['styles'] != '')?' style="'.$options['adwidgets-'.$instance['instance']]['styles'].'"':'').'>'.do_shortcode($options['adwidgets-'.$instance['instance']]['ad_code_'.$wpInsertAdInstance]).'</div>';

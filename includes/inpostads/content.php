@@ -23,7 +23,7 @@ function wp_insert_inpostads_filter_the_content($content) {
 					$position = wp_insert_inpostads_get_middle_position('/p>', $content, $options['middle']['paragraph_buffer_count']);
 				}
 				if($position) {
-					if(($options['middle']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, split(',', $options['middle']['country_1'])))) {
+					if(($options['middle']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, explode(',', $options['middle']['country_1'])))) {
 						$content = substr_replace($content, '/p>'.'<div class="wpInsert wpInsertInPostAd wpInsertMiddle"'.(($options['middle']['styles'] != '')?' style="'.$options['middle']['styles'].'"':'').'>'.do_shortcode($options['middle']['country_code_1']).'</div>', $position, 3);
 					} else {
 						$content = substr_replace($content, '/p>'.'<div class="wpInsert wpInsertInPostAd wpInsertMiddle"'.(($options['middle']['styles'] != '')?' style="'.$options['middle']['styles'].'"':'').'>'.do_shortcode($options['middle']['ad_code_'.$wpInsertAdInstance]).'</div>', $position, 3);
@@ -37,7 +37,7 @@ function wp_insert_inpostads_filter_the_content($content) {
 						$position = wp_insert_inpostads_get_middle_position('/p>', $content, $options['middle']['paragraph_buffer_count']);
 					}
 					if($position) {
-						if(($options['middle']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, split(',', $options['middle']['country_1'])))) {
+						if(($options['middle']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, explode(',', $options['middle']['country_1'])))) {
 							$content = substr_replace($content, '/p>'.'<div class="wpInsert wpInsertInPostAd wpInsertMiddle"'.(($options['middle']['styles'] != '')?' style="'.$options['middle']['styles'].'"':'').'>'.do_shortcode($options['middle']['country_code_1']).'</div>', $position, 3);
 						} else {
 							$content = substr_replace($content, '/p>'.'<div class="wpInsert wpInsertInPostAd wpInsertMiddle"'.(($options['middle']['styles'] != '')?' style="'.$options['middle']['styles'].'"':'').'>'.do_shortcode($options['middle']['ad_code_'.$wpInsertAdInstance]).'</div>', $position, 3);
@@ -48,28 +48,28 @@ function wp_insert_inpostads_filter_the_content($content) {
 		}
 	}
 	if(wp_insert_get_ad_status($options['left'])) {
-		if(($options['left']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, split(',', $options['left']['country_1'])))) {
+		if(($options['left']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, explode(',', $options['left']['country_1'])))) {
 			$content = '<div class="wpInsert wpInsertInPostAd wpInsertLeft" style="float: left; '.(($options['left']['styles'] != '')?$options['left']['styles']:'').'">'.do_shortcode($options['left']['country_code_1']).'</div>'.$content;
 		} else {
 			$content = '<div class="wpInsert wpInsertInPostAd wpInsertLeft" style="float: left; '.(($options['left']['styles'] != '')?$options['left']['styles']:'').'">'.do_shortcode($options['left']['ad_code_'.$wpInsertAdInstance]).'</div>'.$content;
 		}
 	}
 	if(wp_insert_get_ad_status($options['right'])) {
-		if(($options['right']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, split(',', $options['right']['country_1'])))) {
+		if(($options['right']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, explode(',', $options['right']['country_1'])))) {
 			$content = '<div class="wpInsert wpInsertInPostAd wpInsertRight" style="float: right; '.(($options['right']['styles'] != '')?$options['right']['styles']:'').'">'.do_shortcode($options['right']['country_code_1']).'</div>'.$content;
 		} else {
 			$content = '<div class="wpInsert wpInsertInPostAd wpInsertRight" style="float: right; '.(($options['right']['styles'] != '')?$options['right']['styles']:'').'">'.do_shortcode($options['right']['ad_code_'.$wpInsertAdInstance]).'</div>'.$content;
 		}
 	}
 	if(wp_insert_get_ad_status($options['above'])) {
-		if(($options['above']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, split(',', $options['above']['country_1'])))) {
+		if(($options['above']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, explode(',', $options['above']['country_1'])))) {
 			$content = '<div class="wpInsert wpInsertInPostAd wpInsertAbove"'.(($options['above']['styles'] != '')?' style="'.$options['above']['styles'].'"':'').'>'.do_shortcode($options['above']['country_code_1']).'</div>'.$content;
 		} else {
 			$content = '<div class="wpInsert wpInsertInPostAd wpInsertAbove"'.(($options['above']['styles'] != '')?' style="'.$options['above']['styles'].'"':'').'>'.do_shortcode($options['above']['ad_code_'.$wpInsertAdInstance]).'</div>'.$content;
 		}
 	}
 	if(wp_insert_get_ad_status($options['below'])) {
-		if(($options['below']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, split(',', $options['below']['country_1'])))) {
+		if(($options['below']['country_1'] != '') && ($wpInsertGeoLocation != '') && (in_array($wpInsertGeoLocation, explode(',', $options['below']['country_1'])))) {
 			$content = $content.'<div class="wpInsert wpInsertInPostAd wpInsertBelow"'.(($options['below']['styles'] != '')?' style="'.$options['below']['styles'].'"':'').'>'.do_shortcode($options['below']['country_code_1']).'</div>';
 		} else {
 			$content = $content.'<div class="wpInsert wpInsertInPostAd wpInsertBelow"'.(($options['below']['styles'] != '')?' style="'.$options['below']['styles'].'"':'').'>'.do_shortcode($options['below']['ad_code_'.$wpInsertAdInstance]).'</div>';

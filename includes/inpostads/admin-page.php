@@ -29,9 +29,9 @@ function wp_insert_inpostads_content($post, $args) {
 	
 	if(!isset($data[$location])) { $data[$location] = array(); }
 	if($location == 'middle') {
-		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_categories_post_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles', 'minimum_character_count', 'paragraph_buffer_count'));
+		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_loggedin', 'rules_exclude_mobile_devices', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_categories_post_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles', 'minimum_character_count', 'paragraph_buffer_count'));
 	} else {
-		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_categories_post_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles'));
+		$data = wp_insert_sanitize_array($data[$location], array('status', 'ad_code_1', 'ad_code_2', 'ad_code_3', 'country_1', 'country_code_1', 'rules_exclude_loggedin', 'rules_exclude_mobile_devices', 'rules_exclude_home', 'rules_exclude_archives', 'rules_exclude_categories', 'rules_categories_exceptions', 'rules_categories_post_exceptions', 'rules_exclude_search', 'rules_exclude_page', 'rules_page_exceptions', 'rules_exclude_post', 'rules_post_exceptions', 'styles'));
 	}
 	
 	$controls = array();
@@ -43,6 +43,8 @@ function wp_insert_inpostads_content($post, $args) {
 	$controls['country_1'] = wp_insert_get_control('popup', false, $name.'[country_1]', $id.'-country_1', $data['country_1'], 'Geo Targets', '', array('type' => 'countries'));
 	$controls['country_code_1'] = wp_insert_get_control('textarea', false, $name.'[country_code_1]', $id.'-country_code_1', $data['country_code_1'], 'Ad Code', '', null, 'input widefat chitika');
 
+	$controls['rules_exclude_loggedin'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_loggedin]', $id.'-rules_exclude_loggedin', $data['rules_exclude_loggedin'], '', '', null, '', false);
+	$controls['rules_exclude_mobile_devices'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_mobile_devices]', $id.'-rules_exclude_mobile_devices', $data['rules_exclude_mobile_devices'], '', '', null, '', false);
 	$controls['rules_exclude_home'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_home]', $id.'-rules_exclude_home', $data['rules_exclude_home'], '', '', null, '', false);
 	$controls['rules_home_instances'] = wp_insert_get_control('popup', false, $name.'[rules_home_instances]', $id.'-rules_home_instances', $data['rules_home_instances'], '', '', array('type' => 'instances'), '', false);
 	$controls['rules_exclude_archives'] = wp_insert_get_control('ip-checkbox', false, $name.'[rules_exclude_archives]', $id.'-rules_exclude_archives', $data['rules_exclude_archives'], '', '', null, '', false);
@@ -118,6 +120,46 @@ function wp_insert_inpostads_rules_content($controls) {
 	$rulesTable = array(
 		'class' => 'rules',
 		'rows' => array()
+	);
+	array_push(
+		$rulesTable['rows'],
+		array(
+			'cells' => array(
+				array('style' => 'text-align: left;', 'colspan' => '3', 'type' => 'th', 'content' => 'Logged in Users')
+			)
+		),
+		array(
+			'cells' => array(
+				array('content' => 'Status'),
+				array('content' => '&nbsp;:&nbsp;'),
+				array('content' => $controls['rules_exclude_loggedin']['html'])
+			)
+		),
+		array(
+			'cells' => array(
+				array('colspan' => '3', 'content' => '&nbsp;')
+			)
+		)
+	);
+	array_push(
+		$rulesTable['rows'],
+		array(
+			'cells' => array(
+				array('style' => 'text-align: left;', 'colspan' => '3', 'type' => 'th', 'content' => 'Mobile Devices')
+			)
+		),
+		array(
+			'cells' => array(
+				array('content' => 'Status'),
+				array('content' => '&nbsp;:&nbsp;'),
+				array('content' => $controls['rules_exclude_mobile_devices']['html'])
+			)
+		),
+		array(
+			'cells' => array(
+				array('colspan' => '3', 'content' => '&nbsp;')
+			)
+		)
 	);
 	array_push(
 		$rulesTable['rows'],
@@ -290,22 +332,22 @@ function wp_insert_inpostads_rules_content($controls) {
 			)
 		)
 	);
-	array_push(
-		$rulesTable['rows'], 
-		array(
-			'cells' => array(
-				array('colspan' => '3', 'content' => '&nbsp;')
-			)
-		),
-		array(
-			'cells' => array(
-				array('style' => 'text-align: left;', 'colspan' => '3', 'type' => 'th', 'content' => 'Custom Post Types')
-			)
-		)
-	);
 	
 	$post_types = get_post_types(array('public'   => true, '_builtin' => false), 'object'); 
 	if($post_types) {
+		array_push(
+			$rulesTable['rows'], 
+			array(
+				'cells' => array(
+					array('colspan' => '3', 'content' => '&nbsp;')
+				)
+			),
+			array(
+				'cells' => array(
+					array('style' => 'text-align: left;', 'colspan' => '3', 'type' => 'th', 'content' => 'Custom Post Types')
+				)
+			)
+		);
 		foreach($post_types as $post_type) {
 			array_push(
 				$rulesTable['rows'],
