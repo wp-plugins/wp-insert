@@ -155,7 +155,7 @@ label.iOSCheckLabelOff span{ padding-right:8px; }
 
 /*Admin Page*/
 .wp-insert .countryCode{ margin:5px 0 0; }
-.wp-insert input.submit{ border:4px solid gold; border-radius:10px 10px 10px 10px; font-size:24px; height:auto; padding:10px 0; width:97%; }
+.wp-insert input.submit{ border:4px solid gold; border-radius:10px 10px 10px 10px; font-size:24px; height:auto; padding:10px 0; width:100%; }
 .wp-insert .rules{ margin:10px 0; }
 .wp-insert .rules td{ font-size:10px; }
 .wp-insert .codeSnippet code{ display:block; font-size:16px; padding:10px; vertical-align:middle; }

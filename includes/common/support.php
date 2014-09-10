@@ -15,7 +15,8 @@ function wp_insert_support_admin_init() {
 		}
 	}
     add_settings_section('wp-insert-support-top', '', 'wp_insert_support_section', 'wp-insert-support');
-	add_meta_box('wp_insert_facebook', 'Like Us On Facebook', 'wp_insert_facebook_content', 'wp-insert-support-top', 'advanced', 'high');
+	//add_meta_box('wp_insert_facebook', 'Like Us On Facebook', 'wp_insert_facebook_content', 'wp-insert-support-top', 'advanced', 'high');
+	add_meta_box('wp_insert_hire_me', 'Hire Me', 'wp_insert_hire_me_content', 'wp-insert-support-top', 'advanced', 'high');
 	add_meta_box('wp_insert_donate', 'Donate and Support Free Plugins', 'wp_insert_donate_content', 'wp-insert-support-bottom', 'advanced', 'high');
 	add_meta_box('wp_insert_hate_campaign', 'Save Wp-Insert', 'wp_insert_hate_campaign_content', 'wp-insert-support-bottom', 'advanced', 'high');
 	delete_option('wp_insert_showcase_submission');
@@ -28,6 +29,16 @@ function wp_insert_support_section() {
 	do_meta_boxes('wp-insert-support-top', 'advanced', null);
 	echo '<p class="submit"><input type="submit" name="Submit" class="button-primary submit" value="Save Changes" /></p>';
 	do_meta_boxes('wp-insert-support-bottom', 'advanced', null);
+}
+
+function wp_insert_hire_me_content() {
+	echo '<div class="fln-hireme" data-username="namithj" data-style="dzsouma" data-bg="" data-theme="" style="width: 255px; margin: auto;"></div>';
+	echo '<script type="text/javascript">(function(d) {';
+		echo 'var po = d.createElement("script");';
+		echo 'po.type = "text/javascript"; po.async = true; po.src = "//static.flnwdgt.com/build/js/hireme-sdk.js";';
+		echo 'var s = d.getElementsByTagName("script")[0];';
+		echo 's.parentNode.insertBefore(po, s);';
+	echo '})(document);</script>';
 }
 
 function wp_insert_facebook_content() {
