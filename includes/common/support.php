@@ -16,7 +16,7 @@ function wp_insert_support_admin_init() {
 	}
     add_settings_section('wp-insert-support-top', '', 'wp_insert_support_section', 'wp-insert-support');
 	//add_meta_box('wp_insert_facebook', 'Like Us On Facebook', 'wp_insert_facebook_content', 'wp-insert-support-top', 'advanced', 'high');
-	//add_meta_box('wp_insert_hire_me', 'Hire Me', 'wp_insert_hire_me_content', 'wp-insert-support-top', 'advanced', 'high');
+	add_meta_box('wp_insert_hire_me', 'Hire Me', 'wp_insert_hire_me_content', 'wp-insert-support-top', 'advanced', 'high');
 	add_meta_box('wp_insert_donate', 'Donate and Support Free Plugins', 'wp_insert_donate_content', 'wp-insert-support-bottom', 'advanced', 'high');
 	add_meta_box('wp_insert_hate_campaign', 'Save Wp-Insert', 'wp_insert_hate_campaign_content', 'wp-insert-support-bottom', 'advanced', 'high');
 	delete_option('wp_insert_showcase_submission');
@@ -32,18 +32,8 @@ function wp_insert_support_section() {
 }
 
 function wp_insert_hire_me_content() {
-	echo '<div style="width: 230px; margin: 17px auto 0px;">';
-		echo '<a name="freelancer_Hireme" user_id="899781" size="standard" annotation="inline" title="Hire me! on Freelancer.com" href="https://www.freelancer.com/users/899781.html">PHP Developer</a>';
-		echo '<script type="text/javascript">';
-		echo '(function() {';
-			echo 'var po = document.createElement("script");';
-			echo 'po.type = "text/javascript";';
-			echo 'po.async = true;';
-			echo 'po.src = ("https:" == document.location.protocol ? "https" : "http") + "://www.freelancer.com/js/hireme/widget.js";';
-			echo 'var s = document.getElementsByTagName("script")[0];';
-			echo 's.parentNode.insertBefore(po, s);';
-		echo '})();';
-		echo '</script>';
+	echo '<div class="wp_insert_hireme">';
+		echo '<a title="Hire me! on Freelancer.com" href="https://www.freelancer.com/affiliates/email/899781/" target="_blank">Namith Jawahar - Wordpress Expert</a>';
 	echo '</div>';
 }
 

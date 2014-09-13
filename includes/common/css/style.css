@@ -162,3 +162,6 @@ label.iOSCheckLabelOff span{ padding-right:8px; }
 .wp-insert .nicEdit-main ul{ margin:10px 0; padding:10px 10px 10px 25px; }
 .wp-insert .nicEdit-main ul li{ list-style:disc; }
 .wp-insert .chitikaButton{ background:url('../images/chitika_btn.png'); border-radius:5px 5px 5px 5px; box-shadow:0 0 6px #666666; cursor:pointer; height:48px; margin-left:10px; margin-top:-60px; position:relative; width:48px; z-index:10; opacity:0; }
+.wp_insert_hireme { width: 230px; margin: 17px auto 5px; }
+.wp_insert_hireme a { display: block;  background:url('../images/hireme.png') no-repeat 0 0; height: 40px; text-indent: -9999px; width: 230px; }
+.wp_insert_hireme a:hover { opacity: 0.8; }
