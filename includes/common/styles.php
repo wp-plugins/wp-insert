@@ -13,6 +13,6 @@ function wp_insert_admin_styles() {
 	wp_enqueue_script('iphone-checkboxes', WP_INSERT_URL.'/includes/common/js/iphone-style-checkboxes.js?version='.WP_INSERT_VERSION, array('jquery'));
 	wp_enqueue_script('jquery-vertical-tabs', WP_INSERT_URL.'/includes/common/js/jquery-jvert-tabs-1.1.4.js?version='.WP_INSERT_VERSION, array('jquery'));
 	wp_enqueue_script('nicEdit', WP_INSERT_URL.'/includes/common/js/nicEdit-latest.js?version='.WP_INSERT_VERSION, array('jquery'));
-	wp_enqueue_script('image-uploader', WP_INSERT_URL.'/includes/common/js/wp-insert-functions.js?version='.WP_INSERT_VERSION, array('jquery'));	
+	wp_enqueue_script('image-uploader', WP_INSERT_URL.'/includes/common/js/wp-insert-functions.js?version='.WP_INSERT_VERSION, array('jquery'));
 }
 ?>
