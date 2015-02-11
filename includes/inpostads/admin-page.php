@@ -68,6 +68,8 @@ function wp_insert_inpostads_content($post, $args) {
 	
 	$controls['styles'] = wp_insert_get_control('textarea', false, $name.'[styles]', $id.'-styles', $data['styles'], 'Styles:');
 	
+	$controls['notes'] = wp_insert_get_control('textarea', false, $name.'[notes]', $id.'-notes', $data['notes'], 'Notes:', 'Add a note to this Ad block for your personal use.  This note is not displayed anywhere on the site');
+	
 	if($location == 'middle') {
 		$controls['minimum_character_count'] = wp_insert_get_control('text', false, $name.'[minimum_character_count]', $id.'-minimum_character_count', $data['minimum_character_count'], 'Minimum Character Count', 'Show the ad only if the Content meets the minimum character count. If this parameter is set to 0 (or empty) minimum character count check will be deactivated.', null, 'input widefat');
 		$controls['paragraph_buffer_count'] = wp_insert_get_control('text', false, $name.'[paragraph_buffer_count]', $id.'-paragraph_buffer_count', $data['paragraph_buffer_count'], 'Paragraph Buffer Count', 'Shows the ad after X number of Paragraphs.  If this parameter is set to 0 (or empty) the ad will appear in the middle of the content.', null, 'input widefat');
@@ -99,6 +101,10 @@ function wp_insert_inpostads_content($post, $args) {
 		array(
 			'title' => 'Styles',
 			'content' => $controls['styles']['html']
+		),
+		array(
+			'title' => 'Notes',
+			'content' => $controls['notes']['html']
 		)
 	);
 	if($location == 'middle') {

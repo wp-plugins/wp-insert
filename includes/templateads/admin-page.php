@@ -75,6 +75,8 @@ function wp_insert_templateads_content($post, $args) {
 	
 	$controls['styles'] = wp_insert_get_control('textarea', false, $name.'[styles]', $id.'-styles', $data['styles'], 'Styles:');
 	
+	$controls['notes'] = wp_insert_get_control('textarea', false, $name.'[notes]', $id.'-notes', $data['notes'], 'Notes:', 'Add a note to this Ad block for your personal use.  This note is not displayed anywhere on the site');
+	
 	echo $controls['status']['html'];
 	
 	$multiple_network_status = get_option('wp_insert_multiple_network_status');
@@ -105,6 +107,10 @@ function wp_insert_templateads_content($post, $args) {
 		array(
 			'title' => 'Styles',
 			'content' => $controls['styles']['html']
+		),
+		array(
+			'title' => 'Notes',
+			'content' => $controls['notes']['html']
 		)
 	);
 	$controls['vtab'] = wp_insert_get_vtabs('vtab_'.$location, $tabData);

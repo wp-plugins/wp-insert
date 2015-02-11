@@ -15,14 +15,14 @@ function wp_insert_support_admin_init() {
 		}
 	}
     add_settings_section('wp-insert-support-top', '', 'wp_insert_support_section', 'wp-insert-support');
-	//add_meta_box('wp_insert_facebook', 'Like Us On Facebook', 'wp_insert_facebook_content', 'wp-insert-support-top', 'advanced', 'high');
-	add_meta_box('wp_insert_hire_me', 'Hire Me', 'wp_insert_hire_me_content', 'wp-insert-support-top', 'advanced', 'high');
-	add_meta_box('wp_insert_donate', 'Donate and Support Free Plugins', 'wp_insert_donate_content', 'wp-insert-support-bottom', 'advanced', 'high');
-	add_meta_box('wp_insert_hate_campaign', 'Save Wp-Insert', 'wp_insert_hate_campaign_content', 'wp-insert-support-bottom', 'advanced', 'high');
-	delete_option('wp_insert_showcase_submission');
+	//add_meta_box('wp_insert_facebook', 'Like Us On Facebook', 'wp_insert_facebook_content', 'wp-insert-support-top', 'advanced', 'high');	
+	add_meta_box('wp_insert_donate', 'Donate and Support Wp-Insert', 'wp_insert_donate_content', 'wp-insert-support-bottom', 'advanced', 'high');
+	add_meta_box('wp_insert_hire_me', 'Hire Me', 'wp_insert_hire_me_content', 'wp-insert-support-bottom', 'advanced', 'high');
+	add_meta_box('wp_insert_hate_campaign', 'Ratings and Reviews', 'wp_insert_ratings_and_reviews_content', 'wp-insert-support-bottom', 'advanced', 'high');
+	/*delete_option('wp_insert_showcase_submission');
 	if(get_option('wp_insert_showcase_submission') != 'SUBMITTED') {
-		//add_meta_box('wp_insert_showcase', 'Showcase your Site', 'wp_insert_showcase_content', 'wp-insert-support-bottom', 'advanced', 'high');
-	}
+		add_meta_box('wp_insert_showcase', 'Showcase your Site', 'wp_insert_showcase_content', 'wp-insert-support-bottom', 'advanced', 'high');
+	}*/
 }
 
 function wp_insert_support_section() {
@@ -42,13 +42,15 @@ function wp_insert_facebook_content() {
 }
 
 function wp_insert_donate_content() {
-	echo '<a href="http://www.wp-insert.smartlogix.co.in/support/"><img src="'.WP_INSERT_URL.'/includes/common/images/donate_btn.png" style="margin-top: 5px;" /></a><br /><small style="display: block; text-align: center;"><a href="http://wordpress.org/extend/plugins/wp-insert/">Rate the plugin in Wordpress Plugin Repository</a></small>';
+	echo '<p style="text-align: justify; color: rgb(34, 34, 34); font-weight: bold; font-size: 13px;"><b style="text-align: center; display: block; margin: 0px 0px 5px; color: rgb(227, 25, 46); text-shadow: 1px 1px 1px rgb(34, 34, 34); text-transform: uppercase; letter-spacing: 0.5px; font-size: 16px;">Save the Plugin from Dying</b>Developing, Maintaining and Supporting a Popular Plugin requires a lot of time and effort to the tune of a few hours every day.  This project is supposed to purely run on donations, yet the total amount received in Donations in the year 2014 is only $84.<br />A few bucks from you will help me spent more time on the plugin and add more amazing features.  I am requesting every user of the plugin to spare a few dollars so that I can spent enough time on developing more advanced features for the plugin.</p>';
+	//echo '<a href="http://www.wp-insert.smartlogix.co.in/support/" target="_blank"><img src="'.WP_INSERT_URL.'/includes/common/images/donate_btn.png" style="margin-top: 5px;" /></a>';
+	echo '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="business" value="support@smartlogix.co.in"><input type="hidden" name="lc" value="IN"><input type="hidden" name="item_name" value="Wp-Insert Plugin Development Support"><input type="hidden" name="item_number" value="01234156"><input type="hidden" name="button_subtype" value="services"><input type="hidden" name="no_note" value="0"><input type="hidden" name="currency_code" value="USD"><input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynowCC_LG.gif:NonHostedGuest"><input type="hidden" name="on0" value="Choose your Denomination">Choose your Denomination <select name="os0" class="input widefat"><option value="1)">1) $9.00 USD</option><option value="2)">2) $19.00 USD</option><option value="3)">3) $29.00 USD</option><option value="4)">4) $49.00 USD</option><option value="5)">5) $99.00 USD</option><option value="6)">6) $199.00 USD</option><option value="7)">7) $299.00 USD</option><option value="8)">8) $399.00 USD</option><option value="9)">9) $599.00 USD</option><option value="10)">10) $999.00 USD</option></select><input type="hidden" name="currency_code" value="USD"><input type="hidden" name="option_select0" value="1)"><input type="hidden" name="option_amount0" value="9.00"><input type="hidden" name="option_select1" value="2)"><input type="hidden" name="option_amount1" value="19.00"><input type="hidden" name="option_select2" value="3)"><input type="hidden" name="option_amount2" value="29.00"><input type="hidden" name="option_select3" value="4)"><input type="hidden" name="option_amount3" value="49.00"><input type="hidden" name="option_select4" value="5)"><input type="hidden" name="option_amount4" value="99.00"><input type="hidden" name="option_select5" value="6)"><input type="hidden" name="option_amount5" value="199.00"><input type="hidden" name="option_select6" value="7)"><input type="hidden" name="option_amount6" value="299.00"><input type="hidden" name="option_select7" value="8)"><input type="hidden" name="option_amount7" value="399.00"><input type="hidden" name="option_select8" value="9)"><input type="hidden" name="option_amount8" value="599.00"><input type="hidden" name="option_select9" value="10)"><input type="hidden" name="option_amount9" value="999.00"><input type="hidden" name="option_index" value="0"><input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_paynowCC_LG.gif" style="margin: 10px auto 0px; display: block;" border="0" name="submit" alt="PayPal – The safer, easier way to pay online."><img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1"></form>';
 }
 
-function wp_insert_hate_campaign_content() {
+function wp_insert_ratings_and_reviews_content() {
 	//echo '<p>Some users (most likely sponsored by some premium plugin) are spreading a Hate Campaign against Wp-Insert churning away Forum Posts and Negative reviews about the plugin on different sites.</p>';
 	//echo '<p>Please help us defend these unscrupulous activities by writing a honest <a href="http://wordpress.org/support/view/plugin-reviews/wp-insert">review</a> about the plugin and <a href="http://wordpress.org/plugins/wp-insert">rating</a> the plugin in the  Plugin Repository.</p>';
-	echo '<p>Most of you will think about leaving a rating or visiting the forum only when something goes wrong while thousands are using the plugin satisfactorily which  unfortunately is not Reported OR Documented.</p>';
+	//echo '<p>Most of you will think about leaving a rating or visiting the forum only when something goes wrong while thousands are using the plugin satisfactorily which  unfortunately is not Reported OR Documented.</p>';
 	echo '<p style="font-weight: bold; color: #FF0000;"">IF YOU FIND THIS PLUGIN USEFUL DO LEAVE A HONEST <a href="http://wordpress.org/plugins/wp-insert">RATING</a> AND <a href="http://wordpress.org/support/view/plugin-reviews/wp-insert">REVIEW</a> IN THE REPOSITORY AND HELP US AGAINST THE MARKETING CAMPAIGN AIMED TO TARNISH A HIGHLY USEFUL, FREE, FEATURE RICH PLUGIN.</p>';
 }
 
